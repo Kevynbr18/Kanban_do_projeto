@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minhas Reservas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+  <link rel="stylesheet" href="MinhasReservas.css"> <!-- ou use <style> com o CSS acima -->
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">
+      <img src="https://img.icons8.com/ios-filled/50/library.png" alt="Logo">
+      <h1>Reservas</h1>
+    </div>
+    <nav>
+      <a href="LoginAluno.html"><button>Início</button></a>
+      <a href="FazerReserva.html"><button>Nova Reserva</button></a>
+      <a href="CalendarioAluno.html"><button>Calendário</button></a>
+      <a href="../código/Administracao.html"><button>Administração</button></a>
+      <a href="../Professor/LoginProfessor.html"><button>Login do professor</button></a>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <div class="container">
+        <div class="titulo">
+          <h2>Minhas Reservas</h2>
+          <p>Visualize e gerencie suas reservas abaixo:</p>
+        </div>
+
+        <!-- Reserva 1 -->
+        <div class="reserva">
+        <h3>Biblioteca</h3>
+        <p><strong>Data marcada:</strong> 18/10/2025</p>
+        <p class="data-pedido"><strong>Data do pedido:</strong> 10/10/2025</p>
+        <p><strong>Horário:</strong> 14:00 - 16:00</p>
+        <p><strong>Uso:</strong> Estudo individual</p>
+        <button class="cancelar-btn">Cancelar</button>
+        </div>
+
+        <!-- Reserva 2 -->
+        <div class="reserva">
+        <h3>Quadra Esportiva</h3>
+        <p><strong>Data marcada:</strong> 20/10/2025</p>
+        <p class="data-pedido"><strong>Data do pedido:</strong> 08/10/2025</p>
+        <p><strong>Horário:</strong> 10:00 - 12:00</p>
+        <p><strong>Uso:</strong> Jogo de futsal</p>
+        <button class="cancelar-btn">Cancelar</button>
+        </div>
+
+        <div class="reserva">
+        <h3>Estúdio de Gravação</h3>
+        <p><strong>Data marcada:</strong> 22/10/2025</p>
+        <p class="data-pedido"><strong>Data do pedido:</strong> 10/10/2025</p>
+        <p><strong>Horário:</strong> 09:00 - 11:00</p>
+        <p><strong>Uso:</strong> Gravação de vídeo</p>
+        <button class="cancelar-btn">Cancelar</button>
+        </div>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Quer saber mais sobre a escola?</h3>
+        <a href="#">Clique aqui</a>
+      </div>
+      <div class="footer-col">
+        <h3>Suporte</h3>
+        <p>9999-9999</p>
+        <p>chat</p>
+      </div>
+      <div class="footer-col">
+        <h3>Contato</h3>
+        <div class="social-icons">
+          <img src="https://img.icons8.com/ios-glyphs/30/facebook.png" />
+          <img src="https://img.icons8.com/ios-glyphs/30/instagram-new.png" />
+          <img src="https://img.icons8.com/ios-glyphs/30/whatsapp.png" />
+          <img src="https://img.icons8.com/ios-glyphs/30/tiktok.png" />
+        </div>
+      </div>
+    </div>
+  </footer>
+
+ <script>
+  document.querySelectorAll('.cancelar-btn').forEach(button => {
+    button.addEventListener('click', function () {
+      const confirmacao = confirm('Tem certeza que deseja cancelar esta reserva?');
+      if (confirmacao) {
+        this.closest('.reserva').remove();
+        alert('Reserva cancelada com sucesso!');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

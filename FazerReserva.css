@@ -1,0 +1,310 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #004a4e, #002a2b);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #007299; /* Azul mais leve e amigável */
+  padding: 10px 20px;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  filter: contrast(120%) saturate(250%) brightness(130%);
+}
+
+header .logo img {
+  width: 50px;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header nav button {
+  background: #005f80; /* Azul médio */
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+header nav button:hover {
+  background: #0099cc; /* Hover mais vibrante */
+}
+
+/* Saudação */
+.Saudacao {
+  margin-bottom: 20px;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background: #005f80;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.dropbtn:hover {
+  background: #0099cc;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #006a99; /* Fundo do dropdown mais leve */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background: #0099cc;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Conteúdo principal */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Calendário */
+.calendario-box {
+  background: #015e66;
+  padding: 20px;
+  border-radius: 10px;
+  width: 350px;
+}
+
+.calendario-box h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.calendario {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.calendario th, .calendario td {
+  padding: 8px;
+  border: 1px solid #ccc;
+  color: white;
+  height: 40px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.calendario td:hover {
+  background-color: #007a88;
+}
+
+.calendario td.dia {
+  background-color: #006060;
+  border-radius: 5px;
+}
+
+/* Reserva / horários */
+.reserva-box {
+  background: #014a4f;
+  padding: 20px;
+  border-radius: 10px;
+  width: 450px;
+}
+
+.reserva-box h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.horario-grupo {
+  margin-bottom: 20px;
+}
+
+.horario-grupo h3 {
+  margin-bottom: 5px;
+  font-size: 18px;
+  border-bottom: 1px solid #088;
+  padding-bottom: 3px;
+}
+
+.horarios-lista {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.horarios-lista li {
+  padding: 8px 12px;
+  background: #009ea9;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.horarios-lista li:hover {
+  background: #00c0c8;
+}
+
+/* Horários ocupados */
+.horarios-lista li.ocupado {
+  background: #b93434;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+/* Formulário */
+form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form label {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+form select,
+form input[type="text"] {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 14px;
+}
+
+form button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #00868f;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form button:hover {
+  background-color: #00a2ae;
+}
+
+/* Rodapé */
+footer {
+  background: linear-gradient(to bottom, #003d40, #002a2b);
+  color: white;
+  padding: 20px;
+  margin-top: 70px;
+}
+
+.footer-coleft img {
+  width: 150px;
+}
+
+.img-direita {
+  transform: scaleX(-1); /* espelha no eixo horizontal */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  max-width: 1500px;
+  margin: auto;
+}
+
+.footer-col {
+  flex: 1;
+  padding: 10px;
+}
+
+.footer-col h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-transform: lowercase;
+}
+
+.footer-col a {
+  color: #66ccff;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+/* Ícones */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.1);
+}
+

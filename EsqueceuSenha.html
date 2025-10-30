@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Agendamento - SAE</title>
+  <link rel="stylesheet" href="senhaEsq.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../imagem/logo_sem_fundo(1).png" alt="Logo SAE">
+      <h1>SAE - AREA DE CADASTRO</h1>
+    </div>
+    <nav>
+      <a href="Login.html"><button>Início</button></a>
+      <button>Administração</button>
+      <button>Inscrição</button>
+    </nav>
+  </header>
+
+  <main>
+  <!-- ÁREA DE RECUPERAÇÃO DE SENHA/CONTA -->
+  <section class="login-box hidden" id="registerSection">
+    <h2>Recuperar senha/conta</h2>
+
+    <form id="registerForm">
+
+      <!-- Método de recuperação -->
+      <div class="form-group">
+        <label for="method">Escolha o método de recuperação</label>
+        <select id="method" required>
+          <option value="">Selecione</option>
+          <option value="cpf">CPF</option>
+          <option value="ra">RA</option>
+          <option value="email">E-mail</option>
+        </select>
+      </div>
+
+      <!-- Identificação -->
+      <div class="form-group">
+        <label for="identifier">Digite CPF, RA ou E-mail</label>
+        <input type="text" id="identifier" placeholder="Insira seu CPF, RA ou E-mail" required>
+      </div>
+
+      <!-- Nova senha -->
+      <div class="form-group">
+        <label for="newPassword">Nova Senha</label>
+        <input type="password" id="newPassword" placeholder="Digite a nova senha" required>
+      </div>
+
+      <!-- Confirmar senha -->
+      <div class="form-group">
+        <label for="confirmPassword">Confirmar Senha</label>
+        <input type="password" id="confirmPassword" placeholder="Confirme a nova senha" required>
+      </div>
+
+      <!-- Enviar -->
+      <button type="submit" class="btn-primary">Recuperar Conta</button>
+
+      <!-- Enviar link de recuperação -->
+      <button type="button" class="btn-secondary">Enviar link de recuperação por e-mail</button>
+
+      <hr>
+
+      <!-- Login alternativo -->
+      <p>Ou continue com</p>
+      <a href="#" class="google-btn">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo">
+        Google
+      </a>
+
+      <a href="#" class="microsoft-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo" style="width:20px; height:20px;">
+        Microsoft
+      </a>
+
+      <hr>
+
+      <!-- Voltar -->
+      <p><a href="login.html">Voltar ao Login</a></p>
+
+    </form>
+  </section>
+</main>
+
+
+   <!-- Rodapé -->
+<footer>
+  <div class="footer-container">
+   <!-- Coluna da imagem -->
+    <div class="footer-coleft">
+      <img src="../imagem/confuso.png" alt="Imagem confusao" class="img-direita">
+    </div>
+
+    <!-- Coluna 1 -->
+    <div class="footer-col">
+      <h3>Quer saber mais sobre a Escola?</h3>
+      <p><a href="#">Clique aqui </a></p>
+    </div>
+
+    <!-- Coluna 2 -->
+    <div class="footer-col">
+      <h3>suporte</h3>
+      <p>9999-9999</p>
+      <p>9999-9999</p>
+      <p>chat</p>
+    </div>
+
+    <!-- Coluna 3 -->
+    <div class="footer-col">
+      <h3>contato</h3>
+      <div class="social-icons">
+        <a href="#"><img src="../imagem/IconFecebook.png" alt="Facebook"></a>
+        <a href="#"><img src="../imagem/IconInstagram.png" alt="Instagram"></a>
+        <a href="#"><img src="../imagem/IconWhats.png" alt="WhatsApp"></a>
+        <a href="#"><img src="../imagem/IconTiktok.png" alt="TikTok"></a>
+      </div>
+    </div>
+
+    <div class="footer-coleft">
+      <img src="../imagem/confuso.png" alt="Imagem do Professor" >
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
