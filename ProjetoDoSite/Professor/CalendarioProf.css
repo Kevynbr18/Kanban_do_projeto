@@ -1,0 +1,233 @@
+/* Layout geral */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #003d40, #002a2b);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #00444b;
+  padding: 15px 25px;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+nav button, .dropbtn {
+  background: #007da3;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+nav button:hover, .dropbtn:hover {
+  background: #00a8e1;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background: #005f80;
+  border-radius: 5px;
+  min-width: 180px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.dropdown-content a {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+  background: #0099cc;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Conteúdo principal */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+}
+
+/* Calendário */
+.calendar {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.month {
+  background: #00b9f1;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.weekdays, .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+
+.weekdays div {
+  background: #0091b9;
+  color: white;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.days div {
+  border: 1px solid #ccc;
+  padding: 25px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.days div:hover {
+  background: #00b9f1;
+  color: white;
+}
+
+.empty {
+  background: #f0f0f0;
+  border: none;
+  cursor: default;
+}
+
+/* Rodapé */
+footer {
+  background: #003d40;
+  color: white;
+  padding: 25px 15px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-col {
+  text-align: center;
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-col a {
+  color: #66ccff;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* ===================== RESPONSIVIDADE ===================== */
+
+/* Até 900px */
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .calendar {
+    max-width: 90%;
+  }
+
+  .month {
+    font-size: 1.3em;
+  }
+}
+
+/* Até 600px */
+@media (max-width: 600px) {
+  .weekdays div, .days div {
+    padding: 15px 0;
+    font-size: 0.9em;
+  }
+
+  .calendar {
+    width: 95%;
+  }
+
+  nav button, .dropbtn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  footer {
+    text-align: center;
+  }
+}

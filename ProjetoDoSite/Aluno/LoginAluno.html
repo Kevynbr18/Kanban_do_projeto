@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Agendamento - Aluno</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+  <link rel="stylesheet" href="LoginAluno.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../imagem/logo_sem_fundo(1).png" alt="Logo SAE">
+      <h1>SAE - Sistema de Agendamento Escolar</h1>
+    </div>
+    <nav>
+      <a href="CalendarioAluno.html"><button>Calendário</button></a>
+      <a href="../código/Administracao.html"><button>Administração</button></a>
+      <a href="../Professor/LoginProfessor.html"><button>Login do professor</button></a>
+
+      <div class="dropdown">
+        <button class="dropbtn">Olá, Aluno! </button>
+        <div class="dropdown-content">
+          <a href="#" ><img src="../imagem/IconPersona.png" alt="png " style="margin-right: 10px;">Perfil</a>
+          <a href="#"><img src="../imagem/Config.png" alt="png " style="margin-right: 10px;">Configuração</a>
+          <a href="#"><img src="../imagem/Notificacao.png" alt="png " style="margin-right: 10px;">Notificações</a>
+          <a href="../código/Login.html " style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <b style="text-align: center;">Sair</b>
+            <img src="../imagem/Saida.png" alt="Sair" style="width: 20px; height: 20px;">
+          </a>       
+         </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <main>
+    <div class="container">
+      <div class="caixa_esquerda">
+        <h3>Onde deseja fazer a reserva?</h3>
+      <div class="box left">
+        <a href="GrupoBatePapo.html"><button>Grupos</button></a>
+        <a href="FazerReserva.html"><button>Fazer uma nova reserva</button></a>
+      </div>
+    </div>
+
+      <div class="welcome">
+        <h2>Bem-vindo, Aluno!</h2>
+        <p>Estamos muito felizes em tê-lo conosco. 
+        Este é o seu ambiente digital para acompanhar suas atividades acadêmicas, 
+        acessar conteúdos exclusivos e gerenciar seu progresso de forma prática e eficiente.</p>
+      </div>
+
+      <div class="caixa_direita">
+      <div class="box right"> 
+        <h3>Observações</h3>
+        <a href="MinhasReservas.html"><button>Minhas Reservas</button></a>
+        <button>Reforço nos estudos</button>
+        <a href="./Feedback.html"><button>Suporte/feedback</button></a>
+        
+      </div>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+  <div class="footer-container">
+
+    <div class="footer-coleft">
+      <img src="../imagem/estudante-graduado.png" alt="Imagem do Aluno" class="img-direita" >
+    </div>
+
+    <!-- Coluna 1 -->
+    <div class="footer-col">
+      <h3>Quer saber mais sobre a Escola?</h3>
+      <p><a href="#">Clique aqui </a></p>
+    </div>
+
+    <!-- Coluna 2 -->
+    <div class="footer-col">
+      <h3>suporte</h3>
+      <p>9999-9999</p>
+      <p>9999-9999</p>
+      <p>chat</p>
+    </div>
+
+    <!-- Coluna 3 -->
+    <div class="footer-col">
+      <h3>contato</h3>
+      <div class="social-icons">
+        <a href="#"><img src="../imagem/IconFecebook.png" alt="Facebook"></a>
+        <a href="#"><img src="../imagem/IconInstagram.png" alt="Instagram"></a>
+        <a href="#"><img src="../imagem/IconWhats.png" alt="WhatsApp"></a>
+        <a href="#"><img src="../imagem/IconTiktok.png" alt="TikTok"></a>
+      </div>
+    </div>
+
+    <div class="footer-coleft">
+      <img src="../imagem/estudante-graduado.png" alt="Imagem do Aluno" >
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Dropdown menu usuário do alnno 
+    document.querySelector('.dropbtn').addEventListener('click', function() {
+      document.querySelector('.dropdown-content').classList.toggle("show");
+    });
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn') && !event.target.closest('.dropdown')) {
+        document.querySelector('.dropdown-content').classList.remove("show");
+      }
+    }    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #004c59, #002a2f);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #004d66;
+  padding: 15px 20px;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img {
+  width: 50px;
+}
+
+header nav {
+  display: flex;
+  gap: 10px;
+}
+
+header nav button {
+  background: #003d40;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+header nav button:hover {
+  background: #007788;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+.form-container {
+  background-color: rgba(0, 0, 50, 0.4);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  color: #333;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #00bcd4;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #0097a7;
+}
+
+/* Rodapé */
+footer {
+  background: linear-gradient(to bottom, #003d40, #002a2b);
+  color: white;
+  padding: 20px;
+  margin-top: 70px;
+  padding-left: 0px;
+
+}
+
+.footer-coleft img {
+  width: 100px;
+  }
+  
+  .img-direita {
+  transform: scaleX(-1); /* espelha no eixo horizontal */
+}
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1500px;
+  margin: auto;
+}
+
+.footer-col {
+  flex: 1;
+  padding: 10px;
+}
+
+.footer-col h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.footer-col a {
+  color: #66ccff;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+/* Ícones sociais */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a img {
+  width: 30px;
+  height: 30px;
+  transition: 0.3s;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Agendamento - SAE</title>
+  <link rel="stylesheet" href="LoginProfessor.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="../imagem/logo_sem_fundo(1).png" alt="Logo do Sistema SAE - Sistema de Agendamento Escolar">
+      <h1>SAE - Sistema de Agendamento Escolar</h1>
+    </div>
+
+    <nav>
+      <a href="CalendarioProf.html"><button>Calendário</button></a>
+      <a href="../código/Administracao.html"><button>Administração</button></a>
+      <a href="../Aluno/LoginAluno.html"><button>Login do Aluno</button></a>
+    </nav>
+
+    <div class="dropdown">
+      <button class="dropbtn">Olá, Professor!</button>
+      <div class="dropdown-content">
+        <a href="#"><img src="../imagem/IconPersona.png" alt="">Perfil</a>
+        <a href="#"><img src="../imagem/Config.png" alt="">Configuração</a>
+        <a href="#"><img src="../imagem/Notificacao.png" alt="">Notificações</a>
+        <a href="../código/Login.html">Sair<img src="../imagem/Saida.png" alt="" style="margin-left:10px;"></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="Saudacao">
+      <h2>Bem-vindo, Professor!</h2>
+      <p>Essa plataforma apoia sua jornada de ensino e aprendizado.</p>
+    </div>
+
+    <div>
+      <div class="side-box">
+        <h3>Agendamentos</h3>
+        <a href="MyReservas.html" class="side-btn">Ver minhas reservas</a>
+        <a href="SalaReserva.html" class="side-btn">Sala disponível / livre</a>
+        <a href="#" class="side-btn">Reserva para quadras</a>
+      </div>
+
+      <div class="main-box">
+        <h3>Painel Principal</h3>
+        <p>É um prazer tê-lo de volta à plataforma. Estamos aqui para apoiar sua jornada de ensino e aprendizado. Aproveite os recursos disponíveis e tenha um excelente dia de aulas!</p>
+      </div>
+
+      <div class="side-box">
+        <h3>Status</h3>
+        <a href="#" class="side-btn">Histórico</a>
+        <a href="#" class="side-btn">Salas ocupadas</a>
+        <a href="Pendentes.html" class="side-btn">Pendentes</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-coleft">
+        <img src="../imagem/professor-ensinando-com-uma-vara.png" alt="Professor" class="img-direita">
+      </div>
+
+      <div class="footer-col">
+        <h3>Quer saber mais sobre a Escola?</h3>
+        <p><a href="#">Clique aqui</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Suporte</h3>
+        <p>9999-9999</p>
+        <p>9999-9999</p>
+        <p>chat</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contato</h3>
+        <div class="social-icons">
+          <a href="#"><img src="../imagem/IconFecebook.png" alt="Facebook"></a>
+          <a href="#"><img src="../imagem/IconInstagram.png" alt="Instagram"></a>
+          <a href="#"><img src="../imagem/IconWhats.png" alt="WhatsApp"></a>
+          <a href="#"><img src="../imagem/IconTiktok.png" alt="TikTok"></a>
+        </div>
+      </div>
+
+      <div class="footer-coleft">
+        <img src="../imagem/professor-ensinando-com-uma-vara.png" alt="Professor">
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Dropdown menu
+    document.querySelector('.dropbtn').addEventListener('click', function() {
+      document.querySelector('.dropdown-content').classList.toggle("show");
+    });
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn') && !event.target.closest('.dropdown')) {
+        document.querySelector('.dropdown-content').classList.remove("show");
+      }
+    };
+  </script>
+</body>
+</html>

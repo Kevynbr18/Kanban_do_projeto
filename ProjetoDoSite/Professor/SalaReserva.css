@@ -1,0 +1,381 @@
+/* ---------------------------- */
+/* RESET E ESTILO GLOBAL */
+/* ---------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #004e52, #002a2b);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* ---------------------------- */
+/* CABEÇALHO */
+/* ---------------------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 40px;
+  background: #006e75;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  filter: contrast(120%) saturate(250%) brightness(130%);
+}
+
+header h1 {
+  font-size: 22px;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* ---------------------------- */
+/* NAVEGAÇÃO */
+/* ---------------------------- */
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav button {
+  background-color: #002a2b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 16px;
+}
+
+nav button:hover {
+  background-color: #00bcd9;
+}
+
+/* ---------------------------- */
+/* DROPDOWN */
+/* ---------------------------- */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  background-color: #004c52;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dropbtn:hover {
+  background-color: #007788;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  min-width: 180px;
+  background: #004c52;
+  border-radius: 6px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+  background: #006c7a;
+}
+
+/* ---------------------------- */
+/* TÍTULO PRINCIPAL */
+/* ---------------------------- */
+h2 {
+  margin-top: 40px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aeeaff;
+}
+
+/* ---------------------------- */
+/* GRID DE SALAS */
+/* ---------------------------- */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.card {
+  background: rgba(0, 0, 40, 0.4);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 25px;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  background: rgba(0, 100, 110, 0.5);
+  border-color: #00bcd9;
+  transform: translateY(-5px);
+}
+
+.card.selecionada {
+  background: rgba(0, 150, 160, 0.7);
+  border-color: #66ccff;
+  transform: scale(1.05);
+}
+
+/* ---------------------------- */
+/* BOTÕES DE AÇÃO */
+/* ---------------------------- */
+.acoes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px auto;
+}
+
+.btn {
+  background: #66ccff;
+  color: #003d40;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.btn:hover {
+  background: #33bbee;
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* ---------------------------- */
+/* FORMULÁRIO DE AGENDAMENTO */
+/* ---------------------------- */
+#formAgendamento {
+  display: none;
+  background: rgba(0, 0, 50, 0.6);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 30px auto 50px;
+  text-align: left;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#formAgendamento h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #33c7ff;
+}
+
+#formAgendamento label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+  font-size: 16px;
+}
+
+#formAgendamento input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+#formAgendamento input:focus {
+  border-color: #00bcd9;
+  outline: none;
+}
+
+#formAgendamento button {
+  margin-top: 10px;
+}
+
+/* ---------------------------- */
+/* RODAPÉ */
+/* ---------------------------- */
+footer {
+  background: linear-gradient(to bottom, #005358, #002a2b);
+  color: white;
+  padding: 40px 10px;
+  margin-top: auto;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-col {
+  text-align: center;
+}
+
+.footer-col h3 {
+  text-transform: capitalize;
+  margin-bottom: 15px;
+}
+
+.footer-col a {
+  color: #66ccff;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.footer-coleft img {
+  max-width: 150px;
+}
+
+.img-direita {
+  transform: scaleX(-1);
+}
+
+/* Ícones sociais */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 15px;
+}
+
+.social-icons i {
+  font-size: 30px;
+  transition: transform 0.3s ease;
+  color: white;
+}
+
+.social-icons i:hover {
+  transform: scale(1.1);
+}
+
+/* ---------------------------- */
+/* RESPONSIVIDADE */
+/* ---------------------------- */
+
+/* Tablets */
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  .card {
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  .acoes {
+    gap: 20px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  #formAgendamento {
+    width: 90%;
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  nav button, .dropbtn {
+    width: 100%;
+    max-width: 300px;
+    font-size: 14px;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  #formAgendamento {
+    width: 95%;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .footer-col {
+    margin-bottom: 15px;
+  }
+
+  .social-icons {
+    gap: 20px;
+  }
+}

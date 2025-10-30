@@ -1,0 +1,251 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #003d40, #002a2b);
+  color: #f0f0f0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #004d66;
+  padding: 15px 20px;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header .logo img {
+  width: 50px;
+}
+
+header nav {
+  display: flex;
+  gap: 10px;
+}
+
+header nav button {
+  background: #003d40;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+header nav button:hover {
+  background: #007788;
+}
+
+/* Saudação */
+.Saudacao {
+  margin: 40px 0 20px;
+}
+
+.Saudacao h2 {
+  font-size: 24px;
+}
+
+/* Caixa de Login */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.login-box {
+  background: rgba(0, 0, 50, 0.5);
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  text-align: left;
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.login-box p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Formulário */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  background-color: #fff;
+  color: #333;
+}
+
+input::placeholder {
+  color: #888;
+}
+
+/* Foco visível */
+input:focus,
+select:focus,
+button:focus {
+  outline: 2px solid #00ccff;
+  outline-offset: 2px;
+}
+
+/* Link "Esqueceu a senha?" */
+.forgot {
+  display: block;
+  margin: 15px 0;
+  font-size: 14px;
+  color: #66ccff;
+  text-decoration: none;
+  text-align: center;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+/* Botão de Login */
+.login-btn {
+  background: #00a8b5;
+  border: none;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.login-btn:hover {
+  background: #00c3d4;
+  transform: scale(1.02);
+}
+
+/* Alternar para cadastro */
+.switch-form {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.switch-form a {
+  color: #66ccff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.switch-form a:hover {
+  text-decoration: underline;
+}
+
+/* Rodapé */
+footer {
+  background: linear-gradient(to bottom, #003d40, #002a2b);
+  padding: 30px 20px;
+  color: white;
+  margin-top: 60px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: auto;
+  gap: 20px;
+}
+
+.footer-col {
+  flex: 1 1 250px;
+  text-align: center;
+}
+
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-transform: lowercase;
+}
+
+.footer-col a {
+  color: #66ccff;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+/* Ícones sociais */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsivo para celular */
+@media (max-width: 500px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .login-box {
+    padding: 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
