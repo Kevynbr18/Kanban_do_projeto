@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Histórico de Salas Agendadas</title>
+  <link rel="stylesheet" href="../Projeto/CSS/Historico.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="./imagem/logo_sem_fundo(1).png" alt="Logo SAE - Sistema de Agendamento Escolar" />
+      <h1>SAE - Sistema de Agendamento Escolar</h1>
+    </div>
+
+    <nav>
+      <a href="LoginProfessor.html"><button type="button">Início</button></a>
+      <a href="CalendarioProf.html"><button type="button">Calendário</button></a>
+      <a href="./código/Administracao.html"><button type="button">Administração</button></a>
+    </nav>
+
+    <div class="dropdown">
+      <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false">Olá, Professor!</button>
+      <div class="dropdown-content" role="menu" aria-label="Menu do Professor">
+        <a href="#" role="menuitem"><img src="../imagem/IconPersona.png" alt="Ícone de Perfil" />Perfil</a>
+        <a href="#" role="menuitem"><img src="../imagem/Config.png" alt="Ícone de Configuração" />Configuração</a>
+        <a href="#" role="menuitem"><img src="../imagem/Notificacao.png" alt="Ícone de Notificações" />Notificações</a>
+        <a href="./código/Login.html" role="menuitem">Sair<img src="./imagem/Saida.png" alt="Ícone de Saída" /></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="reservas-header">
+      <h1>Histórico de Agendamentos</h1>
+      <p>Visualize aqui as reservas que já ocorreram.</p>
+    </section>
+
+    <table class="historico-table" summary="Lista de agendamentos já realizados com local, data, horário e motivo do uso">
+      <thead>
+        <tr>
+          <th>Local</th>
+          <th>Data</th>
+          <th>Horário</th>
+          <th>Motivo do Uso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sala de Reunião A</td>
+          <td>15/08/2025</td>
+          <td>09:00 — 11:00</td>
+          <td>Reunião de planejamento pedagógico trimestral.</td>
+        </tr>
+        <tr>
+          <td>Quadra de Basquete N°4</td>
+          <td>21/08/2025</td>
+          <td>06:00 — 12:30</td>
+          <td>Aula prática interdisciplinar com os alunos do 2° ano.</td>
+        </tr>
+        <tr>
+          <td>Laboratório N°2</td>
+          <td>10/09/2025</td>
+          <td>09:00 — 11:00</td>
+          <td>Experimentos de química — segurança e manuseio de reagentes.</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-coleft">
+        <img src="./imagem/pendente.png" alt="Imagem ilustrativa de professor" class="img-direita" />
+      </div>
+
+      <div class="footer-col">
+        <h3>Quer saber mais sobre a Escola?</h3>
+        <p><a href="#">Clique aqui</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Suporte</h3>
+        <p>9999-9999</p>
+        <p>9999-9999</p>
+        <p>Chat</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contato</h3>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><img src="./imagem/IconFecebook.png" alt="Facebook" /></a>
+          <a href="#" aria-label="Instagram"><img src="./imagem/IconInstagram.png" alt="Instagram" /></a>
+          <a href="#" aria-label="WhatsApp"><img src="./imagem/IconWhats.png" alt="WhatsApp" /></a>
+          <a href="#" aria-label="TikTok"><img src="./imagem/IconTiktok.png" alt="TikTok" /></a>
+        </div>
+      </div>
+
+      <div class="footer-coleft">
+        <img src="./imagem/pendente.png" alt="Imagem ilustrativa pendente" />
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

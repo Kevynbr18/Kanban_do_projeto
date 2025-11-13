@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sistema de Agendamento - SAE</title>
+  <link rel="stylesheet" href="../Projeto/CSS/Login.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="./imagem/logo_sem_fundo(1).png" alt="Logo SAE">
+      <h1>SAE - Sistema de Agendamento Escolar</h1>
+    </div>
+    <nav>
+      <a href="LoginAluno.html"><button>Login do Aluno</button></a>
+      <a href="LoginProfessor.html"><button>Login do Professor</button></a>
+      <a href="Administracao.html"><button>Administração</button></a>
+      <button>Departamentos</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="Saudacao">
+      <h2>👋 Seja muito bem-vindo(a) ao SAE!</h2>
+      <p>Estamos felizes em ver você por aqui. Faça login para continuar sua jornada conosco.</p>
+    </section>
+
+    <section class="login-box" id="loginSection">
+      <h2>Entrar na Plataforma</h2>
+      <p>Preencha seus dados para acessar sua conta:</p>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="cpf">CPF ou RA</label>
+          <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF ou RA completos" required>
+        </div>
+
+        <div class="form-group">
+          <label for="escola">Escola</label>
+          <select id="escola" name="escola" required>
+            <option value="">Selecione sua escola</option>
+            <option value="escola_sol_nascente">Escola Sol Nascente</option>
+            <option value="colegio_estrela_do_saber">Colégio Estrela do Saber</option>
+            <option value="instituto_saber_vivo">Instituto Saber Vivo</option>
+            <option value="escola_monte_azul">Escola Monte Azul</option>
+            <option value="colegio_futuro_hoje">Colégio Futuro Hoje</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="et">Estado</label>
+          <select id="et" name="et" required>
+            <option value="">Escolha o estado</option>
+            <option value="SP">São Paulo</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="GO">Goiás</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+        </div>
+
+        <a href="EsqueceuSenha.html" class="forgot">Esqueceu sua senha? Clique aqui para recuperar.</a>
+
+        <button type="submit" class="login-btn">Entrar</button>
+      </form>
+
+      <p class="switch-form">Ainda não tem conta? <a href="Cadastro.html">Cadastre-se aqui</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Quer saber mais sobre a escola?</h3>
+        <p><a href="#">Clique aqui</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Suporte</h3>
+        <p>Tel: (11) 9999-9999</p>
+        <p>WhatsApp: (11) 9999-9999</p>
+        <p>Atendimento via chat</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Conecte-se conosco</h3>
+        <div class="social-icons">
+          <a href="#"><img src="./imagem/IconFecebook.png" alt="Facebook"></a>
+          <a href="#"><img src="./imagem/IconInstagram.png" alt="Instagram"></a>
+          <a href="#"><img src="./imagem/IconWhats.png" alt="WhatsApp"></a>
+          <a href="#"><img src="./imagem/IconTiktok.png" alt="TikTok"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../Projeto/JS/index.js"></script>
+</body>
+</html>

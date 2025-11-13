@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fale com a Administração</title>
+  <link rel="stylesheet" href="../Projeto/CSS/Cadastro.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="./imagem/logo_sem_fundo(1).png" alt="Logo SAE">
+      <h1>SAE - Sistema de Agendamento Escolar</h1>
+    </div>
+    <nav>
+      <a href="index.html"><button>Voltar ao Login</button></a>
+      <a href="Administracao.html"><button>Administração</button></a>
+      <button>Departamentos</button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="Saudacao">
+      <h2>Bem-vindo ao Sistema de Agendamento Escolar</h2>
+      <p>Crie sua conta para aproveitar os serviços.</p>
+    </div>
+
+    <div class="cadastro-box">
+      <h2>Cadastro</h2>
+      <p>Preencha as informações abaixo:</p>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+        </div>
+
+        <div class="form-group">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmar-senha">Confirmar Senha</label>
+          <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Confirme sua senha" required>
+        </div>
+
+        <!-- Novo campo para Escolher a Escola -->
+        <div class="form-group">
+          <label for="escola">Escola</label>
+          <select id="escola" name="escola" required>
+            <option value="">Selecione sua escola</option>
+            <option value="escola_sol_nascente">Escola Sol Nascente</option>
+            <option value="colegio_estrela_do_saber">Colégio Estrela do Saber</option>
+            <option value="instituto_saber_vivo">Instituto Saber Vivo</option>
+            <option value="escola_monte_azul">Escola Monte Azul</option>
+            <option value="colegio_futuro_hoje">Colégio Futuro Hoje</option>
+          </select>
+        </div>
+
+        <!-- Novo campo para Escolher o Estado -->
+        <div class="form-group">
+          <label for="estado">Estado</label>
+          <select id="estado" name="estado" required>
+            <option value="">Escolha o estado</option>
+            <option value="SP">São Paulo</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="GO">Goiás</option>
+          </select>
+        </div>
+
+        <button type="submit" class="cadastro-btn">Cadastrar</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Quer saber mais sobre a Escola?</h3>
+        <p><a href="#">Clique aqui</a></p>
+      </div>
+      <div class="footer-col">
+        <h3>Suporte</h3>
+        <p>9999-9999</p>
+        <p>9999-9999</p>
+        <p>Chat</p>
+      </div>
+      <div class="footer-col">
+        <h3>Contato</h3>
+        <div class="social-icons">
+          <a href="#"><img src="../imagem/IconFecebook.png" alt="Facebook"></a>
+          <a href="#"><img src="../imagem/IconInstagram.png" alt="Instagram"></a>
+          <a href="#"><img src="../imagem/IconWhats.png" alt="WhatsApp"></a>
+          <a href="#"><img src="../imagem/IconTiktok.png" alt="TikTok"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
