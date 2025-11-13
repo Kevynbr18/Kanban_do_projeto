@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sala Agendada — Pendente</title>
+  <link rel="stylesheet" href="Pendente.css">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">
+      <img src="../imagem/logo_sem_fundo(1).png" alt="Logo SAE">
+      <h1>SAE - Sistema de Agendamento Escolar</h1>
+    </div>
+
+    <nav>
+      <a href="LoginProfessor.html"><button>Início</button></a>
+      <a href="CalendarioProf.html"><button>Calendário</button></a>
+      <a href="../código/Administracao.html"><button>Administração</button></a>
+    </nav>
+
+    <div class="dropdown">
+      <button class="dropbtn">Olá, Professor!</button>
+      <div class="dropdown-content">
+        <a href="#"><img src="../imagem/IconPersona.png" alt="">Perfil</a>
+        <a href="#"><img src="../imagem/Config.png" alt="">Configuração</a>
+        <a href="#"><img src="../imagem/Notificacao.png" alt="">Notificações</a>
+        <a href="../código/Login.html">Sair<img src="../imagem/Saida.png" alt="" style="margin-left:10px;"></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="reservas-header">
+      <h1>Reservas — Sala Pendente</h1>
+      <a href="#" class="ver-todas">Ver todas</a>
+    </section>
+
+    <!-- Card 1 -->
+    <article class="card">
+      <div class="room-image">SALA A</div>
+      <div class="card-main">
+        <div class="meta">
+          <div class="room-name">Sala de Reunião A</div>
+          <div class="badge status-pendente">Precisando de aprovação</div>
+          <small>Solicitante: Marina Silva • 15/10/2025 • 09:00 — 11:00</small>
+        </div>
+
+        <p class="details">
+          Reunião: Planejamento trimestral. Equipamentos: projetor, videoconferência.
+          Sala solicitada para 20 participantes.
+        </p>
+
+        <div class="progress">
+          <div class="step"><span class="dot active"></span> Solicitação enviada</div>
+          <div class="step"><span class="dot"></span> Aguardando aprovação</div>
+          <div class="step"><span class="dot"></span> Confirmada</div>
+        </div>
+
+        <div class="actions">
+          <button class="btn">Ver detalhes</button>
+          <button class="approve">Aprovar</button>
+          <button class="reject">Rejeitar</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card">
+      <div class="room-image">Quadra 4</div>
+      <div class="card-main">
+        <div class="meta">
+          <div class="room-name">Quadra de Basquete N°4</div>
+          <div class="badge status-aprovado">Aprovado</div>
+          <small>Solicitante: Vitor Santos • 21/08/2025 • 06:00 — 12:30</small>
+        </div>
+
+        <p class="details">
+          Aula de Química: Estudo teórico e prático. Equipamentos de segurança e instrumentos de medição.
+        </p>
+
+        <div class="progress">
+          <div class="step"><span class="dot active"></span> Solicitação enviada</div>
+          <div class="step"><span class="dot active"></span> Aguardando aprovação</div>
+          <div class="step"><span class="dot active"></span> Confirmada</div>
+        </div>
+
+        <div class="actions">
+          <button class="btn">Ver detalhes</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card">
+      <div class="room-image">Lab N°2</div>
+      <div class="card-main">
+        <div class="meta">
+          <div class="room-name">Laboratório N°2</div>
+          <div class="badge status-rejeitado">Rejeitado</div>
+          <small>Solicitante: Marina Silva • 10/09/2025 • 09:00 — 11:00</small>
+        </div>
+
+        <p class="details">
+          Aula de Ed. Física: Alongamentos e competição de times. Equipamentos: bolas e camisas para times.
+        </p>
+
+        <div class="progress">
+          <div class="step"><span class="dot active"></span> Solicitação enviada</div>
+          <div class="step"><span class="dot"></span> Aguardando aprovação</div>
+          <div class="step"><span class="dot active"></span> Rejeitada</div>
+        </div>
+
+        <div class="actions">
+          <button class="btn">Ver detalhes</button>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-coleft">
+        <img src="../imagem/pendente.png" alt="Professor" class="img-direita">
+      </div>
+
+      <div class="footer-col">
+        <h3>Quer saber mais sobre a Escola?</h3>
+        <p><a href="#">Clique aqui</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Suporte</h3>
+        <p>9999-9999</p>
+        <p>9999-9999</p>
+        <p>Chat</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contato</h3>
+        <div class="social-icons">
+          <a href="#"><img src="../imagem/IconFecebook.png" alt="Facebook"></a>
+          <a href="#"><img src="../imagem/IconInstagram.png" alt="Instagram"></a>
+          <a href="#"><img src="../imagem/IconWhats.png" alt="WhatsApp"></a>
+          <a href="#"><img src="../imagem/IconTiktok.png" alt="TikTok"></a>
+        </div>
+      </div>
+
+      <div class="footer-coleft">
+        <img src="../imagem/pendente.png" alt="Imagem Pendente">
+      </div>
+    </div>
+  </footer>
+
+  <script src="Pendentes.js"></script>
+</body>
+</html>
