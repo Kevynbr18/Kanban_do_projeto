@@ -1,0 +1,589 @@
+/* ===== CONFIGURAÇÕES GERAIS ===== */
+/* Define margens e preenchimentos zerados, usa box-sizing para controle de layout e aplica transições suaves */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+  transition: background-color 0.4s, color 0.4s, border-color 0.4s;
+}
+
+/* Garante que o corpo da página ocupe 100% da altura da tela e organize os elementos em coluna */
+html, body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== MODO ESCURO (PADRÃO) ===== */
+/* Fundo com gradiente escuro e texto claro */
+body {
+  background: linear-gradient(to bottom, #00595f, #00282a);
+  color: #e5f8fa;
+}
+
+/* ===== CABEÇALHO ===== */
+/* Barra superior com título centralizado e sombra */
+header {
+  background-color: #00757e;
+  text-align: center;
+  padding: 22px 0;
+  color: #d8f9f9;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+}
+
+/* ===== MENU ===== */
+/* Barra de navegação com botões centralizados e espaçamento */
+nav {
+  background-color: #004245;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  flex-wrap: wrap;
+}
+
+/* Estilo dos botões do menu */
+nav button {
+  background: #00a4ad;
+  border: 2px solid transparent;
+  color: white;
+  font-weight: bold;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Efeito ao passar o mouse sobre os botões */
+nav button:hover {
+  background: #009099;
+  border-color: #00c7c7;
+}
+
+/* ===== DROPDOWN ===== */
+/* Contêiner para o menu suspenso */
+.dropdown {
+  position: relative;
+}
+
+/* Botão do dropdown (perfil do aluno) */
+.dropbtn {
+  background: #009ca4;
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Conteúdo interno do dropdown */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #00494e;
+  min-width: 180px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
+  border-radius: 6px;
+  top: 110%;
+  z-index: 10;
+}
+
+/* Links dentro do dropdown */
+.dropdown-content a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #e0f7f7;
+  padding: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* Efeito ao passar o mouse em um item do dropdown */
+.dropdown-content a:hover {
+  background-color: #00686f;
+}
+
+
+
+.show {
+  display: block;
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+main {
+  flex: 1; /* Faz o conteúdo crescer entre header e footer */
+}
+
+/* Contêiner geral do conteúdo principal (calendário e formulário) */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+/* ===== CALENDÁRIO ===== */
+/* Caixa do calendário com borda, sombra e fundo translúcido */
+.calendario {
+  background-color: rgba(0, 55, 58, 0.96);
+  padding: 20px;
+  border-radius: 12px;
+  width: 480px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+  border: 1px solid #004e54;
+}
+
+/* Título do calendário */
+.calendario h2 {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #b7f4f2;
+}
+
+/* Botões de controle do mês (anterior e próximo) */
+.mes-controles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.mes-controles button {
+  background-color: #00a4ac;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.mes-controles button:hover {
+  background-color: #00929a;
+}
+
+/* Estrutura da tabela do calendário */
+.calendario table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+/* Estilo de células e cabeçalhos da tabela */
+.calendario th,
+.calendario td {
+  border: 1px solid rgba(0, 90, 95, 0.6);
+  padding: 10px;
+  color: #e6ffff;
+  transition: 0.3s;
+}
+
+/* Cabeçalhos dos dias da semana */
+.calendario th {
+  background: rgba(0, 85, 90, 0.7);
+  font-size: 14px;
+}
+
+/* Efeito hover nas células do calendário */
+.calendario td:hover {
+  background: rgba(0, 165, 180, 0.4);
+}
+
+/* Dia selecionado no calendário */
+td.selecionado {
+  background-color: #00bfa5;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* ===== FORMULÁRIO ===== */
+/* Caixa lateral com o formulário de reserva */
+.formulario {
+  background-color: rgba(0, 55, 58, 0.96);
+  padding: 25px;
+  border-radius: 12px;
+  width: 340px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+  border: 1px solid #004e54;
+}
+
+/* Título do formulário */
+.formulario h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #b7f4f2;
+}
+
+/* Organização dos campos do formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+/* Campos e botões */
+select, input, button {
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  background: #f0f0f0;
+  color: #222;
+}
+
+/* Botão de enviar reserva */
+button[type="submit"] {
+  background-color: #00bfa5;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #00a08d;
+}
+
+/* Mensagem de status da reserva */
+#reservaStatus {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* ===== RODAPÉ ===== */
+/* Parte inferior fixa no fim da página */
+footer {
+  background: linear-gradient(to top, #00282b, #003b41);
+  color: #d8f7ff;
+  padding: 30px 0 10px;
+  border-top: 1px solid #005c64;
+  margin-top: auto;
+}
+
+/* Contêiner interno do rodapé (colunas) */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: left;
+}
+
+/* Títulos das colunas */
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #b5eaff;
+  border-bottom: 1px solid #00a3b0;
+  padding-bottom: 6px;
+}
+
+/* Links e textos no rodapé */
+.footer-col a,
+.footer-col p {
+  color: #d8f7ff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-col a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Ícones de redes sociais */
+.social-icons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 26px;
+  filter: brightness(1.1);
+  transition: transform 0.3s, filter 0.3s;
+  cursor: pointer;
+}
+
+.social-icons img:hover {
+  transform: scale(1.15);
+  filter: brightness(1.4);
+}
+
+/* Linha final do rodapé */
+.footer-bottom {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 13px;
+  color: #a7d8e6;
+  border-top: 1px solid #004c55;
+  padding-top: 10px;
+}
+
+/* ===== MODO CLARO ===== */
+/* Altera cores e contrastes quando o modo claro é ativado */
+body.modo-claro {
+  background: linear-gradient(to bottom, #fdfdfd71, #00eeff);
+  color: #000000;
+}
+
+body.modo-claro header {
+  background-color: #00f7ff;
+  color: #000000;
+}
+
+body.modo-claro nav {
+  background-color: #2fb6c2;
+}
+
+body.modo-claro nav button {
+  background: #00f7ff;
+  color: #000;
+}
+
+body.modo-claro nav button:hover {
+  background: #00adb3;
+  color: rgb(0, 0, 0);
+}
+
+body.modo-claro .calendario,
+body.modo-claro .formulario {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+body.modo-claro .calendario th {
+  background: #ff0000;
+  color: #000000;
+}
+body.modo-claro .calendario h2 {
+  color: #000000;
+}
+
+body.modo-claro .calendario td {
+  border: 1px solid #000000;
+  color: #000000;
+}
+
+body.modo-claro .calendario td:hover {
+  background: #02fff2;
+}
+
+body.modo-claro footer {
+  background: linear-gradient(to bottom, #03eeff, #5df4ff);
+  color: #000000;
+  border-top: 2px solid #000000;
+}
+
+body.modo-claro p {
+  color: #000000;
+}
+
+body.modo-claro h2 {
+  color: #000000;
+}
+
+body.modo-claro a{
+  color: #000000;
+}
+body.modo-claro a:hover {
+  color: #ff0000;
+}
+
+body.modo-claro h3 {
+  color: #000000;
+}
+body.modo-claro .footer-col .social-icons img {
+  filter: brightness(0);
+  
+}
+
+
+/* ===== BOTÃO DE TEMA ===== */
+/* Estilo do botão que alterna entre modo escuro e claro */
+.tema-container {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.botao-tema {
+  background-color: #00a4ad;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.botao-tema:hover {
+  background-color: #008e95;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* ----- Telas grandes (até 1200px) ----- */
+/* Reduz espaços e tamanhos para notebooks */
+@media (max-width: 1200px) {
+  .container {
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .calendario {
+    width: 420px;
+  }
+
+  .formulario {
+    width: 300px;
+  }
+
+  .footer-container {
+    gap: 40px;
+  }
+}
+
+/* ----- Tablets (até 992px) ----- */
+/* Alinha o conteúdo verticalmente e ajusta textos */
+@media (max-width: 992px) {
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .calendario,
+  .formulario {
+    width: 90%;
+    max-width: 480px;
+  }
+
+  header {
+    padding: 18px 0;
+  }
+
+  .calendario h2,
+  .formulario h2 {
+    font-size: 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-col h3 {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* ----- Celulares médios (até 768px) ----- */
+@media (max-width: 768px) {
+  header {
+    font-size: 18px;
+  }
+
+  nav button,
+  .dropbtn {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .calendario table th,
+  .calendario table td {
+    padding: 6px;
+    font-size: 13px;
+  }
+
+  button[type="submit"] {
+    padding: 8px;
+  }
+
+  footer {
+    padding: 20px 0;
+  }
+}
+
+/* ----- Celulares pequenos (até 480px) ----- */
+/* Mantém legibilidade e empilha tudo */
+@media (max-width: 480px) {
+  header {
+    font-size: 16px;
+    padding: 15px 0;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  nav button,
+  .dropbtn {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .calendario,
+  .formulario {
+    width: 100%;
+  }
+
+  .calendario table th,
+  .calendario table td {
+    padding: 4px;
+    font-size: 12px;
+  }
+
+  .footer-container {
+    gap: 25px;
+  }
+
+  .footer-col h3 {
+    font-size: 16px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
+
+  .botao-tema {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+}

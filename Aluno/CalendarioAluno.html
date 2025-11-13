@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CalendarioAluno.css">
+  <title>Calendário - SAE</title>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <img src="../imagem/logo_sem_fundo(1).png" alt="Logo do SAE">
+    <h1>SAE - Sistema de Agendamento Escolar</h1>
+  </div>
+
+  <nav>
+    <a href="LoginAluno.html"><button>Início</button></a>
+    <a href="CalendarioAluno.html"><button>Calendário</button></a>
+    <a href="../código/Administracao.html"><button>Administração</button></a>
+    <a href="../Professor/LoginProfessor.html"><button>Login Professor</button></a>
+
+    <div class="dropdown">
+      <button class="dropbtn">Olá, Aluno!</button>
+      <div class="dropdown-content">
+        <a href="#"><img src="../imagem/IconPersona.png" alt="">Perfil</a>
+        <a href="#"><img src="../imagem/Config.png" alt="">Configuração</a>
+        <a href="#"><img src="../imagem/Notificacao.png" alt="">Notificações</a>
+        <a href="../código/Login.html"><b>Sair</b><img src="../imagem/Saida.png" alt=""></a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="calendar">
+    <div class="month">
+      <button id="prev">&#9664;</button>
+      <h2 id="monthYear"></h2>
+      <button id="next">&#9654;</button>
+    </div>
+
+    <div class="weekdays">
+      <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div>
+      <div>Qui</div><div>Sex</div><div>Sáb</div>
+    </div>
+
+    <div class="days" id="days"></div>
+  </section>
+
+  <aside class="event-types">
+    <h3>Tipos de Eventos</h3>
+    <ul>
+      <li><span class="dot" style="background:#e74c3c;"></span> Provas</li>
+      <li><span class="dot" style="background:#ff00bfff;"></span> Atividades</li>
+      <li><span class="dot" style="background:#2ecc71;"></span> Reuniões</li>
+      <li><span class="dot" style="background:#f1c40f;"></span> Palestras</li>
+      <li><span class="dot" style="background:#3e0057ff;"></span> Feriados</li>
+    </ul>
+  </aside>
+</main>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-col">
+      <h3>Quer saber mais sobre a Escola?</h3>
+      <a href="#">Clique aqui</a>
+    </div>
+    <div class="footer-col">
+      <h3>Suporte</h3>
+      <p>(99) 9999-9999</p>
+      <p>Atendimento via chat</p>
+    </div>
+    <div class="footer-col">
+      <h3>Contato</h3>
+      <div class="social-icons">
+        <a href="#"><img src="../imagem/IconFecebook.png" alt="Facebook"></a>
+        <a href="#"><img src="../imagem/IconInstagram.png" alt="Instagram"></a>
+        <a href="#"><img src="../imagem/IconWhats.png" alt="WhatsApp"></a>
+        <a href="#"><img src="../imagem/IconTiktok.png" alt="TikTok"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="CalendarioAluno.js"></script>
+
+</body>
+</html>
