@@ -104,6 +104,118 @@ body {
   display: block;
 }
 
+/* =============================
+   MODO CLARO APERFEIÇOADO
+============================= */
+
+body.modo-claro {
+  background: #29cce6;
+  color: #0c2e33;
+}
+
+/* Header */
+body.modo-claro header {
+  background: #00b4cf;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.342);
+}
+
+/* Navegação */
+body.modo-claro nav button,
+body.modo-claro .dropbtn {
+  border: #000000 1px solid;
+  color: #ffffff;
+}
+
+
+body.modo-claro nav button:hover,
+body.modo-claro .dropbtn:hover {
+  color: #ffffff;
+  background: #00bfa5;
+}
+
+/* Dropdown */
+body.modo-claro .dropdown-content {
+  background: #e8fafd;
+  border: 1px solid #b7e8ee;
+}
+
+body.modo-claro .dropdown-content a {
+  color: #000505;
+}
+
+body.modo-claro .dropdown-content a:hover {
+  background: #b4f3fa;
+}
+
+
+
+
+/*h2 tiutlo*/
+body.modo-claro h2 {
+  color: #000000;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* main*/
+body.modo-claro .card {
+  background: #000cad;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+body.modo-claro .card:hover {
+  background: #5fccff;
+}
+
+body.modo-claro .card.selecionada {
+  border: 2px solid #004d53;
+  background: #00e5ff;
+}
+
+body.modo-claro .btn {
+  background: #001aff;
+  color: #ffffff;
+}
+
+body.modo-claro .btn:hover {
+  background: #5b75c9;
+}
+
+body.modo-claro .modal-content {
+  background: #e0f7fa;
+  color: #000000;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+
+/* Social icons */
+body.modo-claro .social-icons img {
+  filter: brightness(0.1);
+}
+
+body.modo-claro a {
+  color: #004d53;
+}
+
+body.modo-claro a:hover {
+  color: #ff0000;
+}
+
+/* Footer */
+body.modo-claro footer {
+  background: #00e5ff;
+  color: #003135;
+  border-top: 1px solid #97d9e2;
+}
+
+body.modo-claro .footer-col h3 {
+  color: #000000;
+  border-bottom: 1px solid #000000;
+}
+
+body.modo-claro p{
+  color: #004b50;
+}
 
     /* ===== CONTEÚDO PRINCIPAL ===== */
     h2 {
@@ -237,64 +349,73 @@ body {
       outline: none;
     }
 
-footer {
-  background: linear-gradient(to bottom, #003d40, #002a2b);
-  color: #ccc;
-  padding: 40px 20px 10px;
-  margin-top: auto;
-  font-size: 0.95rem;
-}
+/* ===== RODAPÉ ===== */
+    footer {
+      background: linear-gradient(to top, #00282b, #003b41);
+      color: #d8f7ff;
+      padding: 30px 150px 10px;
+      border-top: 1px solid #005c64;
+      margin-top: auto;
+    }
 
-/* conteúdo do footer */
-.footer-content {
+   .footer-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+    .footer-col h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #b5eaff;
+      border-bottom: 1px solid #00a3b0;
+      padding-bottom: 6px;
+    }
+
+    .footer-col a,
+    .footer-col p {
+      color: #d8f7ff;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+
+    .footer-col a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: flex-start;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .social-icons img {
+      width: 26px;
+      filter: brightness(0);
+      transition: transform 0.3s, filter 0.3s;
+      cursor: pointer;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.15);
+      filter: brightness(0);
+    }
+
+    /* Linha final do rodapé */
+.footer-bottom {
   text-align: center;
-  margin-bottom: 25px;
-}
-
-.footer-col {
-  flex: 1;
-  min-width: 200px;
-}
-
-.footer-col h3 {
-  color: #00bcd9;
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-}
-
-.footer-col a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.footer-col a:hover {
-  text-decoration: underline;
-  color: #00e6ff;
-}
-
-/* Ícones sociais */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 10px;
-}
-
-.social-icons img {
-  width: 28px;
-  height: 28px;
-  transition: transform 0.3s, filter 0.3s;
-}
-
-.social-icons img:hover {
-  transform: scale(1.2);
-  filter: brightness(1.4);
+  margin-top: 25px;
+  font-size: 13px;
+  color: #a7d8e6;
+  border-top: 1px solid #004c55;
+  padding-top: 10px;
 }
 
 /* linha inferior */
@@ -304,4 +425,197 @@ footer {
   text-align: center;
   font-size: 0.85rem;
   color: #aaa;
+}
+
+/* ============================================================
+   RESPONSIVIDADE COMPLETA (Mobile → Tablet → Desktop)
+   ============================================================ */
+
+/* ===============  TELAS ATÉ 1024px (Notebooks menores)  =============== */
+@media (max-width: 1024px) {
+
+  header {
+    padding: 15px 20px;
+  }
+
+  nav button,
+  .dropbtn {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  .container {
+    width: 95%;
+    gap: 18px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  footer {
+    padding: 30px 60px;
+  }
+
+  .footer-container {
+    gap: 30px;
+  }
+}
+
+/* ===============  TELAS ATÉ 768px (Tablets)  =============== */
+@media (max-width: 768px) {
+
+  /* Header mais compacto */
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .dropbtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Cards em duas colunas */
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+  }
+
+  /* Modal ajustado */
+  .modal-content {
+    padding: 25px;
+  }
+
+  footer {
+    padding: 25px 40px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* ===============  TELAS ATÉ 480px (CELULARES)  =============== */
+@media (max-width: 480px) {
+
+  /* HEADER MOBILE */
+  header {
+    padding: 15px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  nav button,
+  .dropbtn {
+    width: 100%;
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  /* GRID vira 1 coluna */
+  .container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    width: 92%;
+  }
+
+  .card {
+    padding: 20px;
+    font-size: 0.9rem;
+  }
+
+  .card i {
+    font-size: 1.8rem;
+  }
+
+  .acoes {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  /* MODAL MOBILE */
+  .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  /* FOOTER MOBILE */
+  footer {
+    padding: 25px 20px;
+  }
+
+  .footer-container {
+    gap: 20px;
+  }
+
+  .footer-col h3 {
+    font-size: 1rem;
+  }
+
+  .footer-col p,
+  .footer-col a {
+    font-size: 0.85rem;
+  }
+
+  .social-icons img {
+    width: 22px;
+  }
+}
+
+/* ===============  TELAS MUITO PEQUENAS (≤ 360px)  =============== */
+@media (max-width: 360px) {
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  nav button,
+  .dropbtn {
+    font-size: 0.75rem;
+  }
+
+  footer {
+    padding: 20px 10px;
+  }
 }

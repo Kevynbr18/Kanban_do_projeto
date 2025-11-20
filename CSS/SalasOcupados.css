@@ -15,6 +15,117 @@ body {
   line-height: 1.6;
 }
 
+/* =============================
+   MODO CLARO APERFEIÇOADO
+============================= */
+
+body.modo-claro {
+  background: #29cce6;
+  color: #0c2e33;
+}
+
+/* Header */
+body.modo-claro header {
+  background: #00879c;
+  color: #000000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.342);
+}
+
+/* Navegação */
+body.modo-claro nav button,
+body.modo-claro .dropbtn {
+  border: #000000 1px solid;
+  color: #ffffff;
+}
+
+
+body.modo-claro nav button:hover,
+body.modo-claro .dropbtn:hover {
+  color: #ffffff;
+  background: #00bfa5;
+}
+
+/* Dropdown */
+body.modo-claro .dropdown-content {
+  background: #e8fafd;
+  border: 1px solid #b7e8ee;
+}
+
+body.modo-claro .dropdown-content a {
+  color: #000505;
+}
+
+body.modo-claro .dropdown-content a:hover {
+  background: #b4f3fa;
+}
+
+body.modo-claro .Saudacao h2, 
+body.modo-claro .Saudacao p {
+  color: #000000;
+} 
+
+body.modo-claro .card {
+  background: #ffffff;
+  color: #333333;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================
+  MODO CLARO PARA O MODAL
+==================================*/
+
+body.modo-claro .modal-content {
+  background: #e0f7fa;
+  color: #003135;
+}
+
+body.modo-claro .fechar {
+  color: #003135;
+}
+
+body.modo-claro #cancelarExcluir {
+  background: #007b8a;
+}
+
+body.modo-claro #confirmarExcluir {
+  background: #cc0000;
+}
+
+body.modo-claro #modalEditar input {
+  background: #ffffff;
+  border-color: #007b8a;
+}
+
+
+/* Social icons */
+body.modo-claro .social-icons img {
+  filter: brightness(0.1);
+}
+
+body.modo-claro a {
+  color: #004d53;
+}
+
+body.modo-claro a:hover {
+  color: #ff0000;
+}
+
+/* Footer */
+body.modo-claro footer {
+  background: #00e5ff;
+  color: #003135;
+  border-top: 1px solid #97d9e2;
+}
+
+body.modo-claro .footer-col h3 {
+  color: #000000;
+  border-bottom: 1px solid #000000;
+}
+
+body.modo-claro p{
+  color: #004b50;
+}
+
 /* ===============================
    CABEÇALHO
 ==================================*/
@@ -64,6 +175,14 @@ header nav button {
 header nav button:hover {
   background: #00a6b8;
 }
+
+main h2 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+
+
 
 /* ===============================
    DROPDOWN
@@ -150,70 +269,260 @@ header nav button:hover {
   font-size: 0.95rem;
 }
 
-/* ===============================
-   RODAPÉ
-==================================*/
-footer {
-  background: linear-gradient(to bottom, #005358, #002a2b);
-  color: white;
-  padding: 30px 5%;
-  text-align: center;
+.card-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
 }
 
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+.card-actions button {
+  flex: 1;
+  background: #b30000;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.card-actions button:hover {
+  background: #ff0000;
+}
+
+/* Botão editar */
+.btn-editar {
+  background: #0077cc;
+}
+.btn-editar:hover {
+  background: #0099ff;
+}
+
+/* Botão detalhes */
+.btn-detalhes {
+  background: #008f39;
+}
+.btn-detalhes:hover {
+  background: #00b74a;
+}
+
+
+/* ===============================
+   MODAIS (POPUPS)
+==================================*/
+
+/* Fundo escuro */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(2px);
+  justify-content: center;
   align-items: center;
-  gap: 30px;
-  max-width: 1300px;
+}
+
+/* Caixa do modal */
+.modal-content {
+  
+  background: #ffffff;
+  color: #222;
+  width: 90%;
+  max-width: 450px;
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+  animation: popupShow 0.25s ease-out;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+/* ===============================
+   MODAL EDITAR
+==================================*/
+
+#modalEditar input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+#salvarEditar {
+  background: #008f39;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#salvarEditar:hover {
+  background: #00b74a;
+}
+
+
+/* Animação */
+@keyframes popupShow {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Botão de fechar (X) */
+.fechar {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  color: #444;
+  transition: 0.2s;
+}
+
+.fechar:hover {
+  color: #e60000;
+}
+
+/* Título do modal */
+.modal-content h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* Conteúdo de texto (detalhes) */
+#modalInfo p {
+  margin: 6px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* ===============================
+   MODAL EXCLUIR – BOTÕES
+==================================*/
+.botoes-excluir {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+#cancelarExcluir {
+  flex: 1;
+  padding: 10px;
+  background: #666;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#cancelarExcluir:hover {
+  background: #888;
+}
+
+#confirmarExcluir {
+  flex: 1;
+  padding: 10px;
+  background: #b30000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#confirmarExcluir:hover {
+  background: #ff0000;
+}
+
+
+
+/* ===== RODAPÉ ===== */
+    footer {
+      background: linear-gradient(to top, #00282b, #003b41);
+      color: #d8f7ff;
+      padding: 30px 150px 10px;
+      border-top: 1px solid #005c64;
+      margin-top: auto;
+    }
+
+   .footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
   margin: auto;
 }
 
-.footer-col, .footer-coleft {
+    .footer-col h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #b5eaff;
+      border-bottom: 1px solid #00a3b0;
+      padding-bottom: 6px;
+    }
+
+    .footer-col a,
+    .footer-col p {
+      color: #d8f7ff;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+
+    .footer-col a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: flex-start;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .social-icons img {
+      width: 26px;
+      filter: brightness(1);
+      transition: transform 0.3s, filter 0.3s;
+      cursor: pointer;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.15);
+      filter: brightness(1);
+    }
+
+    
+    /* Linha final do rodapé */
+.footer-bottom {
   text-align: center;
+  margin-top: 25px;
+  font-size: 13px;
+  color: #a7d8e6;
+  border-top: 1px solid #004c55;
+  padding-top: 10px;
 }
 
-.footer-coleft img {
-  max-width: 140px;
-  height: auto;
-}
-
-.img-direita {
-  transform: scaleX(-1);
-}
-
-.footer-col h3 {
-  margin-bottom: 10px;
-  text-transform: capitalize;
-  font-size: 18px;
-}
-
-.footer-col a {
-  color: #66ccff;
-  text-decoration: none;
-}
-
-.footer-col a:hover {
-  text-decoration: underline;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 10px;
-}
-
-.social-icons a img {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s ease;
-}
-
-.social-icons a img:hover {
-  transform: scale(1.1);
-}
 
 /* ===============================
    RESPONSIVIDADE

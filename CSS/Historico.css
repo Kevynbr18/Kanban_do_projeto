@@ -5,22 +5,11 @@
   box-sizing: border-box;
 }
 
-/* VARIÁVEIS CSS */
-:root {
-  --primary-color: #007788;
-  --primary-dark: #004952;
-  --background-gradient-start: #003d40;
-  --background-gradient-end: #002a2b;
-  --text-color-light: #fff;
-  --text-color-dark: #222;
-  --hover-color: #00a6b8;
-}
-
 /* CORPO */
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, var(--background-gradient-start), var(--background-gradient-end));
-  color: var(--text-color-light);
+  background: linear-gradient(to bottom, #003d40, #002a2b);
+  color: #fff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,13 +17,13 @@ body {
 
 /* CABEÇALHO */
 header {
-  background: linear-gradient(to bottom, var(--primary-dark), var(--background-gradient-end));
+  background: linear-gradient(to bottom, #004952, #002a2b);
   padding: 12px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid #007788;
 }
 
 header .logo {
@@ -55,9 +44,9 @@ header nav {
 }
 
 header nav button {
-  background: var(--primary-color);
+  background: #007788;
   border: none;
-  color: var(--text-color-light);
+  color: #fff;
   padding: 8px 16px;
   border-radius: 6px;
   cursor: pointer;
@@ -65,7 +54,7 @@ header nav button {
 }
 
 header nav button:hover {
-  background: var(--hover-color);
+  background: #00a6b8;
 }
 
 /* DROPDOWN */
@@ -74,42 +63,133 @@ header nav button:hover {
 }
 
 .dropbtn {
-  background: var(--primary-color);
-  color: var(--text-color-light);
+  background-color: #006672;
+  color: white;
+  padding: 10px 18px;
   border: none;
-  padding: 8px 15px;
   border-radius: 6px;
   cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.3s;
+}
+
+.dropbtn:hover {
+  background-color: #008499;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
   right: 0;
-  top: 40px;
-  background-color: #014754;
+  background-color: #004d59;
   border-radius: 6px;
-  overflow: hidden;
-  min-width: 160px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  min-width: 180px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  z-index: 10;
 }
 
 .dropdown-content a {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--text-color-light);
+  color: white;
+  padding: 10px 15px;
   text-decoration: none;
-  padding: 10px 14px;
   transition: background 0.3s;
 }
 
 .dropdown-content a:hover {
-  background: var(--primary-color);
+  background-color: #006672;
 }
 
-.dropdown:hover .dropdown-content {
+.show {
   display: block;
+}
+
+
+
+/* =============================
+   MODO CLARO APERFEIÇOADO
+============================= */
+
+body.modo-claro {
+  background: #29cce6;
+  color: #0c2e33;
+}
+
+/* Header */
+body.modo-claro header {
+  background: #00b4cf;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.342);
+}
+
+/* Navegação */
+body.modo-claro nav button,
+body.modo-claro .dropbtn {
+  border: #000000 1px solid;
+  color: #ffffff;
+}
+
+
+body.modo-claro nav button:hover,
+body.modo-claro .dropbtn:hover {
+  color: #ffffff;
+  background: #00bfa5;
+}
+
+/* Dropdown */
+body.modo-claro .dropdown-content {
+  background: #e8fafd;
+  border: 1px solid #b7e8ee;
+}
+
+body.modo-claro .dropdown-content a {
+  color: #000505;
+}
+
+body.modo-claro .dropdown-content a:hover {
+  background: #b4f3fa;
+}
+
+
+  /* Escurecer apenas os ícones do dropdown no modo claro */
+body.modo-claro .dropdown-content img {
+  filter: brightness(0);
+}
+
+
+
+/* Social icons */
+body.modo-claro .social-icons img {
+  filter: brightness(0.1);
+}
+
+body.modo-claro a {
+  color: #004d53;
+}
+
+body.modo-claro a:hover {
+  color: #ff0000;
+}
+
+/* Footer */
+body.modo-claro footer {
+  background: #00e5ff;
+  color: #003135;
+  border-top: 1px solid #97d9e2;
+}
+
+body.modo-claro .footer-col h3 {
+  color: #000000;
+  border-bottom: 1px solid #000000;
+}
+
+body.modo-claro p{
+  color: #004b50;
 }
 
 /* CONTEÚDO PRINCIPAL */
@@ -121,7 +201,7 @@ header nav button:hover {
 }
 
 .reservas-header {
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid #000000;
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
@@ -131,7 +211,7 @@ header nav button:hover {
   width: 100%;
   border-collapse: collapse;
   background: white;
-  color: var(--text-color-dark);
+  color: #222;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
@@ -145,8 +225,8 @@ header nav button:hover {
 }
 
 .historico-table th {
-  background: var(--primary-color);
-  color: var(--text-color-light);
+  background: #007788;
+  color: #fff;
   font-size: 15px;
 }
 
@@ -154,58 +234,86 @@ header nav button:hover {
   background: #f2f8f8;
 }
 
-/* RODAPÉ */
-footer {
-  background: linear-gradient(to bottom, var(--background-gradient-start), var(--background-gradient-end));
-  color: var(--text-color-light);
-  padding: 25px 0;
-  margin-top: auto;
-}
+/* ===== RODAPÉ ===== */
+    footer {
+      background: linear-gradient(to top, #00282b, #003b41);
+      color: #d8f7ff;
+      padding: 30px 150px 10px;
+      border-top: 1px solid #005c64;
+      margin-top: auto;
+    }
 
-.footer-container {
+   .footer-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  gap: 40px;
+  width: 100%;
   max-width: 1200px;
   margin: auto;
 }
 
-.footer-coleft img {
-  width: 120px;
+    .footer-col h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #b5eaff;
+      border-bottom: 1px solid #00a3b0;
+      padding-bottom: 6px;
+    }
+
+    .footer-col a,
+    .footer-col p {
+      color: #d8f7ff;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+
+    .footer-col a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: flex-start;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .social-icons img {
+      width: 26px;
+      filter: brightness(1);
+      transition: transform 0.3s, filter 0.3s;
+      cursor: pointer;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.15);
+      filter: brightness(1);
+    }
+
+    /* Linha final do rodapé */
+.footer-bottom {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 13px;
+  color: #a7d8e6;
+  border-top: 1px solid #004c55;
+  padding-top: 10px;
 }
 
-.img-direita {
-  transform: scaleX(-1);
-}
 
-.footer-col h3 {
-  margin-bottom: 8px;
-}
-
-.footer-col a {
-  color: #66ccff;
-  text-decoration: none;
-}
-
-.footer-col a:hover {
-  text-decoration: underline;
-}
-
-.social-icons {
+.footer-coleft,
+.footer-coright {
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 15px;
 }
 
-.social-icons img {
-  width: 30px;
-  transition: transform 0.3s;
-}
-
-.social-icons img:hover {
-  transform: scale(1.1);
+.footer-img-left,
+.footer-img-right {
+  width: 100px;
 }
 
 /* RESPONSIVO */

@@ -3,187 +3,158 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>GrupoBatePapo - SAE</title>
+  <title>SAE - Bate-papo</title>
   <link rel="stylesheet" href="./CSS/GrupoBatePapo.css">
 </head>
 <body>
-  <!-- CABEÇALHO (mantive o seu padrão) -->
-  <header>
-    <div class="logo">
-      <img src="./imagem/logo_sem_fundo(1).png" alt="Logo SAE">
+  <header >
+    <div class="logo-area">
+      <img src="./imagem/logo_sem_fundo(1).png" alt="SAE logo" class="logo">
       <h1>SAE - Sistema de Agendamento Escolar</h1>
+      <button id="resetSite" class="btn secondary">Resetar</button>
     </div>
 
-    <nav>
-      <a href="LoginAluno.html"><button>Voltar inicio</button></a>
+     <nav>
+      <button id="themeToggle" aria-label="Alternar tema">🌙</button>
+      <a href="LoginAluno.html"><button>Início</button></a>
       <a href="CalendarioAluno.html"><button>Calendário</button></a>
-      <a href="./código/Administracao.html"><button>Administração</button></a>
+      <a href="Administracao.html"><button>Administração</button></a>
 
-      <div class="dropdown" id="userDropdown">
-        <button class="dropbtn" id="dropBtn">Olá, Aluno!</button>
-        <div class="dropdown-content" role="menu" aria-label="Menu do Usuário">
-          <a href="#"><img src="./imagem/IconPersona.png" alt="" style="width:18px"> Perfil</a>
-          <a href="#"><img src="./imagem/Config.png" alt="" style="width:18px"> Configuração</a>
-          <a href="#"><img src="./imagem/Notificacao.png" alt="" style="width:18px"> Notificações</a>
-          <a href="./código/index.html"><b>Sair</b><img src="./imagem/Saida.png" alt="Sair"></a>
+      <div class="dropdown">
+        <button class="dropbtn">Olá, Aluno!</button>
+        <div class="dropdown-content">
+          <a href="./PerfilDoAluno/PerfilAluno.html"><img src="imagem/IconPersona.png" width="20">Perfil</a>
+          <a href="./PerfilDoAluno/ConfigAluno.html"><img src="imagem/Config.png" alt="">Configuração</a>
+          <a href="./PerfilDoAluno/"><img src="imagem/Notificacao.png" width="20">Notificações</a>
+          <a href="index.html"><b>Sair</b><img src="imagem/Saida.png" alt="Sair"></a>
         </div>
       </div>
     </nav>
   </header>
 
-  <main>
-    <div class="central">
-      <!-- USUÁRIOS (coluna esquerda) -->
-      <section class="panel users-panel">
-        <div class="panel-title">Central de Conversas</div>
-
-        <div class="section-subtitle">Usuários</div>
-        <div class="users" id="userList">
-          <div class="user-item" data-type="user" data-id="Ana">
-            <img src="https://plus.unsplash.com/premium_photo-1688572454849-4348982edf7d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Zm90byUyMGRvJTIwcGVyZmlsfGVufDB8fDB8fHww&fm=jpg&q=60&w=3000" alt="Ana">
-            <div class="user-meta">
-              <div class="user-row">
-                <div class="user-name">Ana</div>
-                <div class="status-dot status-online" title="Online"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="user-item" data-type="user" data-id="Carlos">
-            <img src="https://a.storyblok.com/f/191576/1176x882/f95162c213/profile_picture_hero_before.webp" alt="Carlos">
-            <div class="user-meta">
-              <div class="user-row">
-                <div class="user-name">Carlos</div>
-                <div class="status-dot status-offline" title="Offline"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="user-item" data-type="user" data-id="Lucas">
-            <img src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyZmlsfGVufDB8fDB8fHww&fm=jpg&q=60&w=3000" alt="Lucas">
-            <div class="user-meta">
-              <div class="user-row">
-                <div class="user-name">Lucas</div>
-                <div class="status-dot status-online" title="Online"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="user-item" data-type="user" data-id="João">
-            <img src="https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8JUQwJUJDJUQxJTgzJUQwJUI2JUQxJTg3JUQwJUI4JUQwJUJEJUQwJUIwfGVufDB8fDB8fHww&fm=jpg&q=60&w=3000" alt="João">
-            <div class="user-meta">
-              <div class="user-row">
-                <div class="user-name">João</div>
-                <div class="status-dot status-offline" title="Offline"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- GRUPOS (coluna do meio) -->
-      <aside class="panel groups-panel">
-        <div class="groups-header">
-          <div class="section-subtitle">Grupos</div>
-          <button id="openCreateGroup" class="plus-btn" title="Novo grupo">+</button>
-        </div>
-
-        <div id="groupList" class="group-list">
-          <div class="group-item" data-type="group" data-id="Biblioteca">
-            <div class="group-left"><div class="group-name">Biblioteca</div></div>
-            <div style="position:relative;">
-              <button class="menu-btn" aria-label="Abrir menu do grupo">⋮</button>
-            </div>
-          </div>
-
-          <div class="group-item" data-type="group" data-id="Educação Física">
-            <div class="group-left"><div class="group-name">Educação Física</div></div>
-            <div style="position:relative;">
-              <button class="menu-btn" aria-label="Abrir menu do grupo">⋮</button>
-            </div>
-          </div>
-
-          <div class="group-item" data-type="group" data-id="Ciências">
-            <div class="group-left"><div class="group-name">Ciências</div></div>
-            <div style="position:relative;">
-              <button class="menu-btn" aria-label="Abrir menu do grupo">⋮</button>
-            </div>
-          </div>
-        </div>
-      </aside>
-
-      <!-- PAINEL DE CHAT (direita) -->
-      <section class="panel chat-panel">
-        <div class="chat-header">
-          <div class="chat-title">
-            <img id="chatAvatar" src="./imagem/estudante-graduado.png" alt="avatar">
-            <div>
-              <h2 id="chatName">Selecione um grupo ou usuário</h2>
-              <div id="chatMeta" class="chat-meta"></div>
-            </div>
-          </div>
-
-          <div class="chat-actions">
-            <button id="clearChatBtn" class="small-btn" title="Limpar chat">Limpar</button>
-          </div>
-        </div>
-
-        <div class="messages-area" id="messages">
-          <div class="empty-note">Nenhuma conversa selecionada. Clique em um grupo ou usuário à esquerda.</div>
-        </div>
-
-        <div class="chat-input">
-          <input id="messageInput" placeholder="Digite uma mensagem..." disabled />
-          <button id="sendBtn" disabled>Enviar</button>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <!-- POPUP: menu flutuante (reutilizável, criado pelo JS) -->
-  <!-- POPUP: criar grupo -->
-  <div id="createGroupPopup" class="modal hidden" aria-hidden="true">
-    <div class="modal-box">
-      <h3>Criar Novo Grupo</h3>
-      <label>Nome do grupo</label>
-      <input id="newGroupInput" placeholder="Ex: Estudo História">
-
-      <label style="margin-top:10px">Adicionar usuários</label>
-      <div id="createUserList" class="create-user-list">
-        <!-- usuários com checkbox serão inseridos aqui via JS -->
-      </div>
-
-      <div class="modal-actions">
-        <button id="cancelCreate" class="btn ghost">Cancelar</button>
-        <button id="confirmCreate" class="btn primary">Criar</button>
-      </div>
-    </div>
-  </div>
   
- <!-- RODAPÉ -->
+  <div class="container">
+    <aside class="sidebar">
+
+      <div class="box">
+        <h3 style="border-bottom: 1px solid rgba(0,0,0,0.4); margin-bottom: 10px;">Usuários</h3>
+        <div id="users" class="users"></div>
+      </div>
+
+      <div class="box">
+        <div class="groups-header">
+          <h3>Grupos</h3>
+          <button id="addGroup" class="plus-btn" title="Novo grupo">＋</button>
+        </div>
+
+        <div id="groups" class="group-list">
+
+          <!-- TEMPLATE DE GRUPO (JS usa este modelo) -->
+          <template id="groupTemplate">
+            <div class="group-item">
+              <div class="group-left">
+                
+                <!-- Foto do grupo (não é foto de usuários) -->
+                <img class="group-photo" src="" alt="Foto do grupo">
+
+                <div class="group-text">
+                  <span class="group-name"></span>
+                  <span class="group-members"></span>
+                </div>
+
+              </div>
+
+              <button class="menu-btn">⋮</button>
+            </div>
+          </template>
+
+        </div>
+      </div>
+    </aside>
+
+    <main class="chat-area">
+<div id="chatCard" class="chat-card">
+
+        <div id="chatHeader" class="chat-header">
+          <div class="chat-title">
+            <img id="chatAvatar" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar">
+            <div>
+              <div id="chatName" class="chat-name">Selecione um grupo ou usuário</div>
+              <div id="chatMeta" class="chat-meta">Nenhuma conversa selecionada.</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="messages" class="messages-area">
+          <div class="empty-note">
+            <h2>Selecione um grupo ou usuário</h2>
+            <p>Nenhuma conversa selecionada.</p>
+          </div>
+        </div>
+
+        <div id="composer" class="chat-input hidden">
+          <input id="msgInput" type="text" placeholder="Digite uma mensagem..." autocomplete="off">
+          <button id="sendBtn" class="btn">Enviar</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
   <footer>
     <div class="footer-container">
+
       <div class="footer-col">
-        <h3>Quer saber mais sobre a Escola?</h3>
-        <a href="#">Clique aqui</a>
+        <h3>Sobre a Escola</h3>
+        <a href="#">Saiba mais</a>
       </div>
+
       <div class="footer-col">
         <h3>Suporte</h3>
         <p>(99) 9999-9999</p>
-        <p>Atendimento via chat</p>
+        <p><a href="#">Atendimento via Chat</a></p>
       </div>
+
       <div class="footer-col">
         <h3>Contato</h3>
         <div class="social-icons">
-          <a href="#"><img src="./imagem/IconFecebook.png" alt="Facebook"></a>
-          <a href="#"><img src="./imagem/IconInstagram.png" alt="Instagram"></a>
-          <a href="#"><img src="./imagem/IconWhats.png" alt="WhatsApp"></a>
-          <a href="#"><img src="./imagem/IconTiktok.png" alt="TikTok"></a>
+          <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook.png" alt="Facebook"></a>
+          <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" alt="Instagram"></a>
+          <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/whatsapp.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/twitter.png" alt="twitter"></a>
         </div>
       </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Escola Modelo — Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <script src="../Projeto/JS/GrupoBatePapo.js"></script>
+  <!-- POPUP DE INFORMAÇÕES DO GRUPO -->
+  <div id="popupOverlay" class="popup-overlay hidden"></div>
+
+  <div id="popupGroupInfo" class="popup-box hidden" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+    <div class="popup-header">
+      <h2 id="popupTitle">Informações do Grupo</h2>
+      <button id="popupClose" class="popup-close" aria-label="Fechar">×</button>
+    </div>
+
+    <div class="popup-content">
+      <label for="popupGroupName">Nome do Grupo</label>
+      <input type="text" id="popupGroupName" />
+
+      <label>Foto do Grupo</label>
+      <div id="popupAvatarPreview" class="avatar-preview"></div>
+      <input type="file" id="popupAvatarInput" accept="image/*" />
+
+      <div class="popup-actions">
+        <button id="popupSaveBtn" class="btn save-btn">Salvar Alterações</button>
+        <button id="popupLeaveBtn" class="btn secondary leave-btn">Sair do Grupo</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./JS/GrupoBatePapo.js"></script>
 </body>
 </html>

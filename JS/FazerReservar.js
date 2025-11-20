@@ -7,25 +7,7 @@
       if (!event.target.matches('.dropbtn') && !event.target.closest('.dropdown')) {
         document.querySelector('.dropdown-content').classList.remove("show");
       }
-    }; 
-    
-function alternarModo() {
-  document.body.classList.toggle('modo-claro');
-
-  const icone = document.getElementById("iconeTema");
-  const modoClaro = document.body.classList.contains("modo-claro");
-
-  if (modoClaro) {
-    // Sol branco para modo claro
-    icone.src = "https://img.icons8.com/ios-filled/50/000000/sun--v1.png";
-    icone.alt = "Modo Claro";
-  } else {
-    // Lua branca para modo escuro
-    icone.src = "https://img.icons8.com/ios-filled/50/ffffff/moon-symbol.png";
-    icone.alt = "Modo Escuro";
-  }
-}
-
+    };
 
 document.addEventListener("DOMContentLoaded", () => {
   const diasDoMes = document.getElementById("diasDoMes");
@@ -214,3 +196,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
   gerarCalendario();
 });
+
+
+/* ============================
+   TEMA CLARO / ESCURO
+   ============================ */
+
+// Carregar tema salvo
+document.addEventListener("DOMContentLoaded", () => {
+  const temaSalvo = localStorage.getItem("sae-tema");
+
+  if (temaSalvo === "claro") {
+    document.body.classList.add("modo-claro");
+  }
+
+  atualizarIconeTema();
+});
+
+// Botão para alternar tema
+document.getElementById("themeToggle").addEventListener("click", () => {
+  document.body.classList.toggle("modo-claro");
+
+  const modoClaroAtivo = document.body.classList.contains("modo-claro");
+
+  localStorage.setItem("sae-tema", modoClaroAtivo ? "claro" : "escuro");
+
+  atualizarIconeTema();
+});
+
+// Ajustar ícone do botão
+function atualizarIconeTema() {
+  const botao = document.getElementById("themeToggle");
+  const modoClaro = document.body.classList.contains("modo-claro");
+
+  botao.textContent = modoClaro ? "☀️" : "🌙";
+}

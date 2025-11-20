@@ -15,7 +15,141 @@ html, body {
   flex-direction: column;
 }
 
-/* ===== MODO ESCURO (PADRÃO) ===== */
+/* =============================
+   MODO CLARO APERFEIÇOADO
+============================= */
+
+body.modo-claro {
+  background: linear-gradient(to bottom, #addcf3, #29cce6);
+  color: #0c2e33;
+}
+
+/* Header */
+body.modo-claro header {
+  background-color: #00d7e3;
+  color: #003035;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+/* Navegação */
+body.modo-claro nav button,
+body.modo-claro .dropbtn {
+  border: #000000 1px solid;
+  color: #ffffff;
+}
+
+
+body.modo-claro nav button:hover,
+body.modo-claro .dropbtn:hover {
+  color: #ffffff;
+  background: #00bfa5;
+}
+
+/* Dropdown */
+body.modo-claro .dropdown-content {
+  background: #e8fafd;
+  border: 1px solid #b7e8ee;
+}
+
+body.modo-claro .dropdown-content a {
+  color: #000505;
+}
+
+body.modo-claro .dropdown-content a:hover {
+  background: #b4f3fa;
+}
+
+/* Calendário / Formulário */
+body.modo-claro .calendario,
+body.modo-claro .formulario {
+  background-color: #ffffff;
+  border: 1px solid #b8e6ea;
+  color: #002a2e;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+}
+
+/* Título dos blocos */
+body.modo-claro .calendario h2,
+body.modo-claro .formulario h2 {
+  color: #004b50;
+}
+
+/* Cabeçalho do calendário */
+body.modo-claro .calendario th {
+  background: #00c5d1;
+  color: #00292e;
+  border-bottom: 1px solid #009da6;
+}
+
+/* Células */
+body.modo-claro .calendario td {
+  color: #003438;
+  border: 1px solid #ccecee;
+}
+
+body.modo-claro .calendario td:hover {
+  background: #bff7ff;
+}
+
+/* Dia selecionado */
+body.modo-claro td.selecionado {
+  background: #00c5d1;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Inputs */
+body.modo-claro input,
+body.modo-claro select {
+  background: #f0fbff;
+  color: #003539;
+  border: 1px solid #b8e6ea;
+}
+
+body.modo-claro button[type="submit"] {
+  background: #00c5d1;
+  color: white;
+}
+
+body.modo-claro button[type="submit"]:hover {
+  background: #00a8b2;
+}
+
+/* Footer */
+body.modo-claro footer {
+  background: linear-gradient(to bottom, #eafcff, #00e5ff);
+  color: #003135;
+  border-top: 1px solid #97d9e2;
+}
+
+/* Social icons */
+body.modo-claro .social-icons img {
+  filter: brightness(0.4);
+}
+
+body.modo-claro a {
+  color: #004d53;
+}
+
+body.modo-claro a:hover {
+  color: #0044ff;
+}
+body.modo-claro .footer-col h3 {
+  color: #000000;
+  border-bottom: 1px solid #00ddff;
+}
+
+body.modo-claro p{
+  color: #004b50;
+}
+
+/* Status da reserva */
+#reservaStatus {
+  transition: color 0.4s ease-in-out;
+}
+
+
+/* ===== MODO (PADRÃO) ===== */
 /* Fundo com gradiente escuro e texto claro */
 body {
   background: linear-gradient(to bottom, #00595f, #00282a);
@@ -88,6 +222,10 @@ nav button:hover,
   min-width: 160px;
 }
 
+.dropdown-content.show {
+  display: block;
+}
+
 .dropdown-content a {
   color: white;
   padding: 10px 15px;
@@ -102,10 +240,6 @@ nav button:hover,
   background: rgba(0, 150, 190, 0.8);
 }
 
-.dropbtn:focus + .dropdown-content,
-.dropdown:hover .dropdown-content {
-  display: block;
-}
 
 
 
@@ -308,16 +442,16 @@ footer {
 }
 
 .social-icons img {
-  width: 26px;
-  filter: brightness(1.1);
-  transition: transform 0.3s, filter 0.3s;
-  cursor: pointer;
-}
+      width: 26px;
+      filter: brightness(0);
+      transition: transform 0.3s, filter 0.3s;
+      cursor: pointer;
+    }
 
-.social-icons img:hover {
-  transform: scale(1.15);
-  filter: brightness(1.4);
-}
+    .social-icons img:hover {
+      transform: scale(1.15);
+      filter: brightness(0);
+    }
 
 /* Linha final do rodapé */
 .footer-bottom {
@@ -329,122 +463,7 @@ footer {
   padding-top: 10px;
 }
 
-/* ===== MODO CLARO ===== */
-/* Altera cores e contrastes quando o modo claro é ativado */
-body.modo-claro {
-  background: linear-gradient(to bottom, #fdfdfd71, #00eeff);
-  color: #000000;
-}
 
-body.modo-claro header {
-  background-color: #00f7ff;
-  color: #000000;
-}
-
-body.modo-claro nav {
-  background-color: #2fb6c2;
-}
-
-body.modo-claro nav button {
-  background: #00f7ff;
-  color: #000;
-}
-
-body.modo-claro nav button:hover {
-  background: #00adb3;
-  color: rgb(0, 0, 0);
-}
-
-body.modo-claro .calendario,
-body.modo-claro .formulario {
-  background-color: #ffffff;
-  color: #000000;
-  border: 1px solid #000000;
-}
-
-body.modo-claro .calendario th {
-  background: #ff0000;
-  color: #000000;
-}
-body.modo-claro .calendario h2 {
-  color: #000000;
-}
-
-body.modo-claro .calendario td {
-  border: 1px solid #000000;
-  color: #000000;
-}
-
-body.modo-claro .calendario td:hover {
-  background: #02fff2;
-}
-
-body.modo-claro footer {
-  background: linear-gradient(to bottom, #03eeff, #5df4ff);
-  color: #000000;
-  border-top: 2px solid #000000;
-}
-
-body.modo-claro p {
-  color: #000000;
-}
-
-body.modo-claro h2 {
-  color: #000000;
-}
-
-body.modo-claro a{
-  color: #000000;
-}
-body.modo-claro a:hover {
-  color: #ff0000;
-}
-
-body.modo-claro h3 {
-  color: #000000;
-}
-body.modo-claro .footer-col .social-icons img {
-  filter: brightness(0);
-  
-}
-
-
-/* ===== BOTÃO DE TEMA ===== */
-/* ===== BOTÃO DE TEMA FIXO À ESQUERDA ===== */
-.tema-container {
-  position: fixed;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-  z-index: 9999;
-}
-
-.botao-tema {
-  background-color: rgba(0, 90, 120, 0.85);
-  border: none;
-  border-radius: 50%;
-  padding: 10px;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 200, 255, 0.4);
-  transition: transform 0.3s, background-color 0.3s;
-}
-
-.botao-tema:hover {
-  background-color: #00b8d4;
-  transform: scale(1.1);
-}
-
-.botao-tema img {
-  width: 32px;
-  height: 32px;
-  filter: drop-shadow(0 0 4px rgba(0,0,0,0.4));
-  transition: filter 0.3s, transform 0.3s;
-}
-
-/* Modo claro muda leve o brilho do ícone */
-body.modo-claro .botao-tema img {
-  filter: drop-shadow(0 0 3px rgba(0,0,0,0.6));
-}
 /* ===== RESPONSIVIDADE ===== */
 
 /* ----- Telas grandes (até 1200px) ----- */

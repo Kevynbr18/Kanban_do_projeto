@@ -123,6 +123,105 @@ header nav button:hover {
   display: block;
 }
 
+/* =============================
+   MODO CLARO APERFEIÇOADO
+============================= */
+
+body.modo-claro {
+  background: #29cce6;
+  color: #0c2e33;
+}
+
+/* Header */
+body.modo-claro header {
+  background: #00879c;
+  color: #000000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.342);
+}
+
+/* Navegação */
+body.modo-claro nav button,
+body.modo-claro .dropbtn {
+  border: #000000 1px solid;
+  color: #ffffff;
+}
+
+
+body.modo-claro nav button:hover,
+body.modo-claro .dropbtn:hover {
+  color: #ffffff;
+  background: #00bfa5;
+}
+
+/* Dropdown */
+body.modo-claro .dropdown-content {
+  background: #e8fafd;
+  border: 1px solid #b7e8ee;
+}
+
+body.modo-claro .dropdown-content a {
+  color: #000505;
+}
+
+body.modo-claro .dropdown-content a:hover {
+  background: #b4f3fa;
+}
+
+
+/*cards*/
+body.modo-claro .card {
+  background: #ffffff;
+  color: #02283a;
+  box-shadow: 0 6px 18px rgba(10,25,47,0.1);
+}
+
+body.modo-claro .card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Status */
+body.modo-claro .status-aprovado {
+  background: #00ff4c;
+}
+body.modo-claro .status-rejeitado {
+  background: red;
+}
+body.modo-claro .status-pendente {
+  background: #ff9d00;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+
+/* Social icons */
+body.modo-claro .social-icons img {
+  filter: brightness(0.1);
+}
+
+body.modo-claro a {
+  color: #004d53;
+}
+
+body.modo-claro a:hover {
+  color: #ff0000;
+}
+
+/* Footer */
+body.modo-claro footer {
+  background: #00e5ff;
+  color: #003135;
+  border-top: 1px solid #97d9e2;
+}
+
+body.modo-claro .footer-col h3 {
+  color: #000000;
+  border-bottom: 1px solid #000000;
+}
+
+body.modo-claro p{
+  color: #004b50;
+}
+
 /* ===================== */
 /*  CONTEÚDO PRINCIPAL   */
 /* ===================== */
@@ -167,7 +266,7 @@ main.container {
 /*  CARDS DE RESERVAS    */
 /* ===================== */
 .card {
-  background: #ffffff;
+  background: #007fb9;
   color: #02283a;
   border-radius: 12px;
   padding: 20px;
@@ -196,7 +295,7 @@ main.container {
   align-items: center;
   font-weight: 700;
   font-size: 18px;
-  color: #034f84;
+  color: #0095ff;
   flex-shrink: 0;
   text-align: center;
 }
@@ -221,7 +320,7 @@ main.container {
 
 .meta small {
   font-size: 13px;
-  color: #6b7280;
+  color: #000000;
 }
 
 /* Status */
@@ -233,27 +332,27 @@ main.container {
 }
 
 .status-aprovado {
-  background: #e7fbf1;
-  color: #08623b;
-  border: 1px solid #bfe9c8;
+  background: #008b2a;
+  color: #080808;
+  border: 1px solid #000000;
 }
 
 .status-pendente {
-  background: linear-gradient(180deg, #fff6e6, #fff2dd);
-  color: #7a5200;
-  border: 1px solid #f1d7a8;
+  background: rgb(180, 117, 0);
+  color: #000000;
+  border: 1px solid #000000;
 }
 
 .status-rejeitado {
-  background: #fff1f1;
-  color: #9b2c2c;
-  border: 1px solid #f3c6c6;
+  background: #970000;
+  color: #000000;
+  border: 1px solid #000000;
 }
 
 /* Descrição */
 .details {
   font-size: 14px;
-  color: #334155;
+  color: #000000;
   margin-bottom: 12px;
 }
 
@@ -270,88 +369,117 @@ main.container {
   align-items: center;
   gap: 6px;
   font-size: 13px;
-  color: #475569;
+  color: #000000;
 }
+
 
 .dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #e2e8f0;
-  border: 1px solid #cbd5e1;
+  background: #ff6600;
+  border: 1px solid #000000;
 }
 
+.dot.aver{
+  background: #ffffff;
+  border-color: #000000;
+}
 .dot.active {
   background: #60a5fa;
-  border-color: #3b82f6;
+  border-color: #000000;
 }
 
-/* ===================== */
-/*  RODAPÉ               */
-/* ===================== */
-footer {
-  background: linear-gradient(to bottom, #003d40, #002a2b);
-  color: white;
-  padding: 25px 0;
-  margin-top: auto;
+.dot.aceita {
+  background: #00ff4c;
+  border-color: #000000;
 }
 
-.footer-container {
+.dot.reject {
+  background: #ff0000;
+  border-color: #000000;
+}
+
+/* ===== RODAPÉ ===== */
+    footer {
+      background: linear-gradient(to top, #00282b, #003b41);
+      color: #d8f7ff;
+      padding: 30px 150px 10px;
+      border-top: 1px solid #005c64;
+      margin-top: auto;
+    }
+
+   .footer-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  max-width: 1500px;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
   margin: auto;
-  flex-wrap: wrap;
-  gap: 20px;
+}
+
+    .footer-col h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #b5eaff;
+      border-bottom: 1px solid #00a3b0;
+      padding-bottom: 6px;
+    }
+
+    .footer-col a,
+    .footer-col p {
+      color: #d8f7ff;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+
+    .footer-col a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: flex-start;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .social-icons img {
+      width: 26px;
+      filter: brightness(0);
+      transition: transform 0.3s, filter 0.3s;
+      cursor: pointer;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.15);
+      filter: brightness(0);
+    }
+
+    /* Linha final do rodapé */
+.footer-bottom {
   text-align: center;
+  margin-top: 25px;
+  font-size: 13px;
+  color: #a7d8e6;
+  border-top: 1px solid #004c55;
+  padding-top: 10px;
 }
 
-.footer-coleft img {
-  width: 150px;
-}
 
-.img-direita {
-  transform: scaleX(-1);
-}
-
-.footer-col {
-  flex: 1;
-  padding: 10px;
-  min-width: 200px;
-}
-
-.footer-col h3 {
-  margin-bottom: 10px;
-  font-size: 16px;
-  text-transform: capitalize;
-}
-
-.footer-col a {
-  color: #66ccff;
-  text-decoration: none;
-}
-
-.footer-col a:hover {
-  text-decoration: underline;
-}
-
-/* Ícones sociais */
-.social-icons {
+.footer-coleft,
+.footer-coright {
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 15px;
-  margin-top: 10px;
 }
 
-.social-icons a img {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s;
-}
-
-.social-icons a img:hover {
-  transform: scale(1.1);
+.footer-img-left,
+.footer-img-right {
+  width: 100px;
 }
 
 /* ===================== */

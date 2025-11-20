@@ -73,3 +73,22 @@
       }
     };
 
+
+     // Botão para alternar tema
+document.getElementById("themeToggle").addEventListener("click", () => {
+  document.body.classList.toggle("modo-claro");
+
+  const modoClaroAtivo = document.body.classList.contains("modo-claro");
+
+  localStorage.setItem("sae-tema", modoClaroAtivo ? "claro" : "escuro");
+
+  atualizarIconeTema();
+});
+
+// Ajustar ícone do botão
+function atualizarIconeTema() {
+  const botao = document.getElementById("themeToggle");
+  const modoClaro = document.body.classList.contains("modo-claro");
+
+  botao.textContent = modoClaro ? "☀️" : "🌙";
+}

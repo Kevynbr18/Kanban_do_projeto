@@ -254,15 +254,17 @@ footer {
   margin-top: 10px;
 }
 
-.social-icons a img {
-  width: 28px;
-  height: 28px;
-  transition: transform 0.3s ease;
-}
+.social-icons img {
+      width: 26px;
+      filter: brightness(0);
+      transition: transform 0.3s, filter 0.3s;
+      cursor: pointer;
+    }
 
-.social-icons a img:hover {
-  transform: scale(1.15);
-}
+    .social-icons img:hover {
+      transform: scale(1.15);
+      filter: brightness(0);
+    }
 
 /* ANIMAÇÃO */
 @keyframes fadeIn {

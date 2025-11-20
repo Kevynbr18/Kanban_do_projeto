@@ -14,6 +14,102 @@ body {
   flex-direction: column;
 }
 
+/* =============================
+   MODO CLARO APERFEIÇOADO
+============================= */
+
+body.modo-claro {
+  background: linear-gradient(to bottom, #addcf3, #29cce6);
+  color: #0c2e33;
+}
+
+/* Header */
+body.modo-claro header {
+  background-color: #00d7e3;
+  color: #003035;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+/* Navegação */
+body.modo-claro nav button,
+body.modo-claro .dropbtn {
+  border: #000000 1px solid;
+  color: #ffffff;
+}
+
+
+body.modo-claro nav button:hover,
+body.modo-claro .dropbtn:hover {
+  color: #ffffff;
+  background: #00bfa5;
+}
+
+/* Dropdown */
+body.modo-claro .dropdown-content {
+  background: #e8fafd;
+  border: 1px solid #b7e8ee;
+}
+
+body.modo-claro .dropdown-content a {
+  color: #000505;
+}
+
+body.modo-claro .dropdown-content a:hover {
+  background: #b4f3fa;
+}
+
+/* Coisas no conteiner */
+body.modo-claro .caixa {
+  background: rgba(224, 249, 255, 0.7);
+  border: 1px solid #a3e1ea;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.modo-claro .caixa h3,
+body.modo-claro .caixa h2 {
+  color: #00b8d4;
+}
+
+body.modo-claro .caixa p {
+  color: #000000;
+}
+
+body.modo-claro .box button {
+  background: #00c8e0;
+  color: #ffffff;
+}
+body.modo-claro .box button:hover {
+  background: #00a3b0;
+}
+
+/* Footer */
+body.modo-claro footer {
+  background: linear-gradient(to bottom, #eafcff, #00e5ff);
+  color: #003135;
+  border-top: 1px solid #97d9e2;
+}
+
+/* Social icons */
+body.modo-claro .social-icons img {
+  filter: brightness(0.1);
+}
+
+body.modo-claro a {
+  color: #004d53;
+}
+
+body.modo-claro a:hover {
+  color: #0044ff;
+}
+body.modo-claro .footer-col h3 {
+  color: #000000;
+  border-bottom: 1px solid #00ddff;
+}
+
+body.modo-claro p{
+  color: #004b50;
+}
+
 /* === CABEÇALHO === */
 header {
   background: rgba(0, 127, 143, 0.9);
@@ -218,14 +314,14 @@ main {
 
     .social-icons img {
       width: 26px;
-      filter: brightness(1.1);
+      filter: brightness(0);
       transition: transform 0.3s, filter 0.3s;
       cursor: pointer;
     }
 
     .social-icons img:hover {
       transform: scale(1.15);
-      filter: brightness(1.4);
+      filter: brightness(0);
     }
 
     /* Linha final do rodapé */
@@ -236,6 +332,10 @@ main {
   color: #a7d8e6;
   border-top: 1px solid #004c55;
   padding-top: 10px;
+}
+
+.footer-img-left{
+    transform: scaleX(-1);
 }
 
 .footer-img-left,

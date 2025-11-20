@@ -50,4 +50,16 @@
       dropdownContent.classList.remove('show');
     });
 
-  
+  // Troca de tema
+document.getElementById("themeToggle").addEventListener("click", () => {
+  document.body.classList.toggle("modo-claro");
+  localStorage.setItem("sae-tema",
+    document.body.classList.contains("modo-claro") ? "claro" : "escuro"
+  );
+  atualizarIconeTema();
+});
+
+function atualizarIconeTema() {
+  const botao = document.getElementById("themeToggle");
+  botao.textContent = document.body.classList.contains("modo-claro") ? "☀️" : "🌙";
+}

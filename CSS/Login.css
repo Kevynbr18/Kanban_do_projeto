@@ -211,13 +211,16 @@ footer {
 }
 
 .social-icons img {
-  width: 30px;
-  transition: transform 0.3s;
-}
+      width: 26px;
+      filter: brightness(0);
+      transition: transform 0.3s, filter 0.3s;
+      cursor: pointer;
+    }
 
-.social-icons img:hover {
-  transform: scale(1.2);
-}
+    .social-icons img:hover {
+      transform: scale(1.15);
+      filter: brightness(0);
+    }
 
 /* ANIMAÇÕES */
 @keyframes fadeIn {
