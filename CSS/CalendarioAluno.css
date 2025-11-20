@@ -1,15 +1,26 @@
-/* === RESET E BASE === */
+/* ===========================
+   RESET GLOBAL
+=========================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(180deg, #00363d, #001e22);
-  color: #eafcff;
+html, body {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===========================
+   MODO ESCURO PADRÃO
+=========================== */
+body {
+  background: linear-gradient(to bottom, #00474d, #00282a);
+  color: #e5f8fa;
   display: flex;
   flex-direction: column;
 }
@@ -42,7 +53,6 @@ header {
   color: #eafcff;
 }
 
-/* === NAVEGAÇÃO === */
 nav {
   display: flex;
   gap: 10px;
@@ -75,11 +85,14 @@ nav button:hover,
   display: none;
   position: absolute;
   right: 0;
-  background: rgba(0, 60, 80, 0.95);
+  background: rgba(13, 86, 110, 0.95);
   border-radius: 8px;
   overflow: hidden;
   min-width: 160px;
-  z-index: 10;
+}
+
+.dropdown-content.show {
+  display: block;
 }
 
 .dropdown-content a {
@@ -96,96 +109,380 @@ nav button:hover,
   background: rgba(0, 150, 190, 0.8);
 }
 
-.dropbtn:focus + .dropdown-content,
-.dropdown:hover .dropdown-content {
+/* ===========================
+   CONTAINER CENTRAL
+=========================== */
+.reserva-container {
+  width: 900px;
+  max-width: 95%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.reserva-container h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* ===========================
+   LEGENDA
+=========================== */
+.legenda-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.legenda-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* ===========================
+   CALENDÁRIO
+=========================== */
+.calendar {
+  margin: 0 auto 30px auto;
+  width: 550px;
+  max-width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #00acba;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.15);
+}
+
+.cal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  padding: 8px 0;
+  border-bottom: 2px solid #00acba;
+}
+
+.cal-header button {
+  background-color: #016a77;
+  border: none;
+  color: #eafcff;
+  padding: 6px 14px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.cal-header button:hover {
+  background-color: #009bb0;
+}
+
+#monthTitle {
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: center;
+}
+
+.calendar-table th {
+  padding: 10px 0;
+  font-weight: 600;
+  opacity: 0.9;
+  border-bottom: 2px solid #008d94;
+  color: #b8faff;
+}
+
+.calendar-table td {
+  height: 65px;
+  padding: 6px 0;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.15s;
+  border-radius: 4px;
+  vertical-align: middle;
+  position: relative;
+}
+
+.calendar-table td:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.dia.selecionado {
+  background: rgba(0, 150, 255, 0.3);
+  border-radius: 6px;
+}
+
+.today {
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid #00ffea;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.calendar-table td.empty {
+  cursor: default;
+  background: transparent;
+  border: none;
+}
+
+/* ===========================
+   MARCADORES DE EVENTOS
+=========================== */
+.marker-container {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 3px;
+}
+
+.marker {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.event-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* Tooltip de evento */
+.calendar-table td[data-event]:hover::after {
+  content: attr(data-event);
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 180, 200, 0.9);
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+/* ===========================
+   FORMULÁRIO DE RESERVA
+=========================== */
+.form-box {
+  margin-top: 25px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  text-align: left;
+}
+
+.form-box label {
+  font-weight: 500;
+  margin-bottom: 6px;
   display: block;
 }
 
-/* === CONTEÚDO PRINCIPAL === */
-main.container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 30px;
-  flex-wrap: wrap;
-  padding: 40px 20px;
-}
-
-.calendario, .formulario {
-  background: rgba(0, 90, 110, 0.6);
-  border: 1px solid rgba(0, 200, 255, 0.2);
-  border-radius: 14px;
-  padding: 25px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s ease;
-  width: 340px;
-}
-
-.calendario:hover, .formulario:hover {
-  background: rgba(1, 158, 198, 0.7);
-  transform: translateY(-5px);
-}
-
-h2 {
-  color: #00eaff;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-/* === TABELA DO CALENDÁRIO === */
-.calendario table {
+.form-box select, .form-box input {
   width: 100%;
-  border-collapse: collapse;
-  text-align: center;
-}
-
-.calendario th,
-.calendario td {
-  border: 1px solid rgba(0, 200, 255, 0.1);
-  padding: 10px;
-  color: #eafcff;
-  transition: 0.3s;
-}
-
-.calendario th {
-  background: rgba(0, 90, 120, 0.6);
-}
-
-.calendario td:hover {
-  background: rgba(0, 200, 255, 0.3);
-  cursor: pointer;
-}
-
-/* === FORMULÁRIO === */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-select, input, button {
-  padding: 8px;
+  padding: 7px 10px;
+  border-radius: 5px;
   border: none;
-  border-radius: 8px;
-  background: #f0f0f0;
-  color: #222;
+  margin-bottom: 12px;
+  outline: none;
 }
 
-button[type="submit"] {
-  background: rgba(22, 0, 220, 0.85);
+.form-box button {
+  padding: 8px 16px;
+  background: #00a6b4;
   color: white;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
 }
 
-button[type="submit"]:hover {
-  background: #36b2ff;
-  transform: scale(1.05);
+.form-box button:hover {
+  background: #007a83;
 }
 
-/* === RODAPÉ === */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7); /* Fundo escuro translúcido */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: #00363d;
+  padding: 30px 25px;
+  border-radius: 15px;
+  color: #eafcff;
+  width: 380px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  position: relative;
+  transform: translateY(-20px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #00d7e3;
+}
+
+.modal-content h3 {
+  margin: 20px 0 10px 0;
+  font-size: 18px;
+  color: #b5eaff;
+}
+
+#listaReservas {
+  max-height: 150px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  background: rgba(255,255,255,0.05);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* FORMULÁRIO */
+#formReserva label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+#formReserva select {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #00acba;
+  background: rgba(255,255,255,0.05);
+  color: #eafcff;
+}
+
+#formReserva select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+#formReserva option {
+    color: #000000;
+}
+
+
+#formReserva button {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: #00acba;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#formReserva button:hover {
+  background: #009bb0;
+}
+
+/* BOTÃO FECHAR */
+.modal-content > button {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #e74c3c;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.2s;
+  margin-top: 15px;
+}
+
+.modal-content > button:hover {
+  background: #c0392b;
+}
+
+/* RESERVAS LISTADAS */
+.reserva-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  margin: 4px 0;
+  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
+}
+
+.reserva-item span.event-dot {
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.btn-del {
+  background: #ff4d4d;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.btn-del:hover {
+  background: #c0392b;
+}
+
+/* STATUS RESERVA */
+#reservaStatus {
+  margin-top: 12px;
+  font-weight: 600;
+  color: #00ffea;
+}
+
+/* ANIMAÇÃO DO MODAL */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* ===========================
+   FOOTER
+=========================== */
 footer {
   background: linear-gradient(to top, #00282b, #003b41);
   color: #d8f7ff;
@@ -218,11 +515,10 @@ footer {
   color: #d8f7ff;
   text-decoration: none;
   font-size: 14px;
-  transition: color 0.3s;
 }
 
 .footer-col a:hover {
-  color: #ffffff;
+  color: #fff;
   text-decoration: underline;
 }
 
@@ -235,14 +531,14 @@ footer {
 
 .social-icons img {
   width: 26px;
-  filter: brightness(1.1);
+  filter: brightness(0);
   transition: transform 0.3s, filter 0.3s;
   cursor: pointer;
 }
 
 .social-icons img:hover {
   transform: scale(1.15);
-  filter: brightness(1.4);
+  filter: brightness(0);
 }
 
 .footer-bottom {
@@ -254,20 +550,109 @@ footer {
   padding-top: 10px;
 }
 
-/* === RESPONSIVIDADE === */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
+body.modo-claro {
+  background: linear-gradient(to bottom, #addcf3, #29cce6);
+  color: #0c2e33;
+}
+
+/* Header */
+body.modo-claro header {
+  background-color: #00d7e3;
+  color: #003035;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+body.modo-claro h1{
+  color: #000;
+}
+
+/* Navegação */
+body.modo-claro nav button,
+body.modo-claro .dropbtn {
+  border: #000000 1px solid;
+  color: #ffffff;
+}
+
+
+body.modo-claro nav button:hover,
+body.modo-claro .dropbtn:hover {
+  color: #ffffff;
+  background: #00bfa5;
+}
+
+/* Dropdown */
+body.modo-claro .dropdown-content {
+  background: #e8fafd;
+  border: 1px solid #b7e8ee;
+}
+
+body.modo-claro .dropdown-content a {
+  color: #000505;
+}
+
+body.modo-claro .dropdown-content a:hover {
+  background: #b4f3fa;
+}
+
+body.modo-claro .calendar-table td {
+  border: #000000 1px solid ;
+}
+
+body.modo-claro .calendar-table th{
+color: #000000;
+}
+
+/* Footer */
+body.modo-claro footer {
+  background: linear-gradient(to bottom, #eafcff, #00e5ff);
+  color: #003135;
+  border-top: 1px solid #97d9e2;
+}
+
+/* Social icons */
+body.modo-claro .social-icons img {
+  filter: brightness(0.1);
+}
+
+body.modo-claro a {
+  color: #004d53;
+}
+
+body.modo-claro a:hover {
+  color: #0044ff;
+}
+body.modo-claro .footer-col h3 {
+  color: #000000;
+  border-bottom: 1px solid #00ddff;
+}
+
+body.modo-claro p{
+  color: #004b50;
+}
+
+/* ===========================
+   RESPONSIVO
+=========================== */
+@media (max-width: 600px) {
+  nav {
+    flex-wrap: wrap;
   }
-  .container {
-    flex-direction: column;
-    align-items: center;
+
+  .reserva-container {
+    width: 95%;
   }
-  .calendario, .formulario {
+
+  .calendar {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .cal-header button {
+    padding: 5px 10px;
+    font-size: 18px;
+  }
+
+  .modal-content {
     width: 90%;
-  }
-  footer {
-    padding: 20px;
   }
 }

@@ -21,6 +21,10 @@ body.modo-claro {
   color: #0c2e33;
 }
 
+body.modo-claro h1{
+  color: #000000;
+}
+
 /* Header */
 body.modo-claro header {
   background-color: #00d7e3;
@@ -64,6 +68,9 @@ body.modo-claro .mensagem {
 color: white;
 }
 
+body.modo-claro .container{
+  background: #0bb4c4;
+}
 
 /* Footer */
 body.modo-claro footer {
@@ -184,85 +191,119 @@ nav button,
   padding: 8px 12px;
   border: none;
   cursor: pointer;
-    color: white;
+  color: white;
   border-radius: 6px;
 }
 
-/* === CONTEÚDO === */
+/* ===== CONTAINER ===== */
 .container {
-  max-width: 800px;
+  background: #016168;
+  max-width: 900px;
   margin: 40px auto;
   padding: 0 20px;
+  border: #008591 solid 3px;
+  border-radius: 10px;
+  height: 560px;
 }
 
-.titulo{
-color: black;
-}
+h2 { margin-bottom: 20px; border-bottom: #003135 1px solid; padding: 10px; }
 
-.mensagem {
-color: black;
-}
-
-h2 {
-  margin-bottom: 20px;
-}
-
+/* Top Actions */
 .top-actions {
-  margin-bottom: 5px;
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
 }
 
 .top-actions button {
   background: #0078ff;
   border: none;
   color: white;
-  padding: 8px 12px;
+  padding: 8px 16px;
   border-radius: 6px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* === NOTIFICAÇÕES === */
+.top-actions button:hover { background: #005bb5; }
+
+/* ===== LISTA DE NOTIFICAÇÕES ===== */
 .lista-notificacoes {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  border: #000000 solid 2px;
-  border-radius: 10px;
-  background: #005c64;
-  padding: 10px;
 }
 
 .notificacao {
-  padding: 15px;
-  background: #76aaf8;
-  border-left: 5px solid #0078ff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  transition: transform 0.2s, background 0.3s, opacity 0.3s;
+  cursor: default;
 }
 
 .notificacao.nao-lida {
-  background: #76aaf8;
+  background: #0a83c6;
+  border-left: 6px solid #00d4ff;
+}
+
+.notificacao.lida {
+  background: #0767a6;
+  opacity: 0.85;
+  border-left: 6px solid #009245;
+}
+
+/* Texto */
+.notificacao .texto {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .notificacao .titulo {
-  font-weight: bold;
-  margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .notificacao .mensagem {
-  margin-bottom: 10px;
+  font-size: 14px;
+  opacity: 0.9;
 }
 
-.notificacao button {
+/* Botão Marcar como Lida */
+.notificacao button.btnLer {
   background: #009245;
   border: none;
-  padding: 6px 10px;
+  padding: 6px 12px;
   color: white;
   cursor: pointer;
   border-radius: 6px;
+  font-size: 13px;
+  transition: all 0.2s ease;
 }
 
+.notificacao button.btnLer:hover { background: #007032; }
+
+/* Badge Lida */
+.notificacao .badge-lida {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #009245;
+  color: white;
+  font-size: 13px;
+  border: 1px solid #009245;
+  transition: all 0.2s ease;
+}
+
+/* Hover efeito */
+.notificacao:hover { transform: scale(1.02); }
 /* ===== RODAPÉ ===== */
 /* Parte inferior fixa no fim da página */
 footer {

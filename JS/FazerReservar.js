@@ -1,233 +1,174 @@
-// Dropdown menu
-    document.querySelector('.dropbtn').addEventListener('click', function() {
-      document.querySelector('.dropdown-content').classList.toggle("show");
+// FazerReserva.js — versão corrigida e robusta
+(function () {
+  'use strict';
+
+  // Util: mostrar mensagem temporária
+  function mostrarMsg(texto, tipo = 'info', tempo = 3000) {
+    const msg = document.getElementById('msg');
+    if (!msg) return;
+    msg.textContent = texto;
+    msg.style.opacity = '1';
+    msg.style.transition = 'opacity .25s';
+    msg.style.color = tipo === 'sucesso' ? '#0a8f3a' : tipo === 'erro' ? '#c0392b' : '#1f6f8b';
+
+    // limpar após tempo
+    clearTimeout(mostrarMsg._timer);
+    mostrarMsg._timer = setTimeout(() => {
+      msg.style.opacity = '0';
+      // opcional: esvaziar depois da transição
+      setTimeout(() => { if (msg) msg.textContent = ''; }, 300);
+    }, tempo);
+  }
+
+  // Valida data não ser passada
+  function dataEhValida(dataISO) {
+    if (!dataISO) return false;
+    const hoje = new Date();
+    hoje.setHours(0,0,0,0);
+    const data = new Date(dataISO + 'T00:00:00');
+    return data >= hoje;
+  }
+
+  // Dropdown do perfil
+  function initDropdown() {
+    const dropbtn = document.querySelector('.dropbtn');
+    const dropdown = document.querySelector('.dropdown');
+    const content = document.querySelector('.dropdown-content');
+
+    if (!dropbtn || !content) return;
+
+    dropbtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = content.classList.toggle('show');
+      dropbtn.setAttribute('aria-expanded', String(isOpen));
     });
 
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn') && !event.target.closest('.dropdown')) {
-        document.querySelector('.dropdown-content').classList.remove("show");
+    // fecha ao clicar fora
+    document.addEventListener('click', (ev) => {
+      if (!dropdown) return;
+      if (!dropdown.contains(ev.target)) {
+        content.classList.remove('show');
+        if (dropbtn) dropbtn.setAttribute('aria-expanded', 'false');
       }
-    };
-
-document.addEventListener("DOMContentLoaded", () => {
-  const diasDoMes = document.getElementById("diasDoMes");
-  const mesAnoTexto = document.getElementById("mesAno");
-  const dataSelecionadaInput = document.getElementById("dataSelecionada");
-  const status = document.getElementById("reservaStatus");
-  const localSelect = document.getElementById("local");
-  const horarioSelect = document.getElementById("horario");
-  const finalidadeSelect = document.getElementById("finalidade");
-
-  let dataAtual = new Date();
-
-  const horarios = {
-    quadra: ["08:00", "09:00", "10:00", "14:00", "15:00"],
-    biblioteca: ["08:00", "09:30", "11:00", "13:00", "15:00"],
-    laboratorio: ["08:00", "10:00", "12:00", "14:00", "16:00"],
-    sala: ["07:30", "09:00", "10:30", "13:30", "15:00"]
-  };
-
-  const finalidades = {
-    quadra: ["Educação Física", "Campeonato", "Treino Escolar", "Recreação"],
-    biblioteca: ["Leitura", "Estudo", "Reunião de Grupo", "Pesquisa"],
-    laboratorio: ["Experimento", "Aula Prática", "Projeto de Robótica"],
-    sala: ["Aula Regular", "Reunião de Professores", "Oficina Escolar"]
-  };
-
-  let reservas = { quadra: {}, biblioteca: {}, laboratorio: {}, sala: {} };
-
-  // === NOVA FUNÇÃO: ajusta a cor do status conforme o tema ===
-  function definirCorStatus(tipo) {
-    const modoClaro = document.body.classList.contains("modo-claro");
-
-    if (tipo === "erro") {
-      status.style.color = modoClaro ? "#b00000" : "#ff9999"; // vermelho escuro no claro, vermelho claro no escuro
-    } else if (tipo === "sucesso") {
-      status.style.color = modoClaro ? "#000000" : "#a2f9b5"; // preto no claro, verde no escuro
-    } else {
-      status.style.color = modoClaro ? "#000000" : "#000000ff"; // padrão
-    }
-  }
-
-  // === GERAR CALENDÁRIO ===
-  function gerarCalendario() {
-    const ano = dataAtual.getFullYear();
-    const mes = dataAtual.getMonth();
-    const primeiroDia = new Date(ano, mes, 1).getDay();
-    const totalDias = new Date(ano, mes + 1, 0).getDate();
-
-    mesAnoTexto.textContent = dataAtual.toLocaleDateString("pt-BR", {
-      month: "long",
-      year: "numeric"
     });
 
-    diasDoMes.innerHTML = "";
-    let dia = 1;
+    // fecha com ESC
+    document.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Escape') {
+        content.classList.remove('show');
+        if (dropbtn) dropbtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 
-    for (let i = 0; i < 6; i++) {
-      const tr = document.createElement("tr");
+  // Tema claro/escuro
+  function initThemeToggle() {
+    const botao = document.getElementById('themeToggle');
+    if (!botao) return;
 
-      for (let j = 0; j < 7; j++) {
-        const td = document.createElement("td");
+    function atualizarIconeTema() {
+      botao.textContent = document.body.classList.contains('modo-claro') ? '☀️' : '🌙';
+    }
 
-        if ((i === 0 && j < primeiroDia) || dia > totalDias) {
-          td.textContent = "";
-        } else {
-          td.textContent = dia;
-          td.classList.add("dia");
+    // carregar tema salvo
+    const temaSalvo = localStorage.getItem('sae-tema');
+    if (temaSalvo === 'claro') document.body.classList.add('modo-claro');
+    else document.body.classList.remove('modo-claro');
+    atualizarIconeTema();
 
-          ((d) => {
-            td.addEventListener("click", (e) => selecionarDia(e, d, mes, ano));
-          })(dia);
+    botao.addEventListener('click', () => {
+      document.body.classList.toggle('modo-claro');
+      const modoClaro = document.body.classList.contains('modo-claro');
+      localStorage.setItem('sae-tema', modoClaro ? 'claro' : 'escuro');
+      atualizarIconeTema();
+    });
+  }
 
-          dia++;
-        }
+  // Formulário de reserva
+  function initForm() {
+    const form = document.getElementById('formReserva');
+    const btn = document.getElementById('btnReservar');
+    const tipoEl = document.getElementById('tipoEspaco');
+    const dataEl = document.getElementById('dataReserva');
+    const horaEl = document.getElementById('horaReserva');
+    const descEl = document.getElementById('descricao');
 
-        tr.appendChild(td);
+    // proteção: se não existir, sai
+    if (!form || !btn || !tipoEl || !dataEl || !horaEl || !descEl) {
+      console.warn('FazerReserva.js: elemento(s) do formulário não encontrado(s). Verifique IDs.');
+      return;
+    }
+
+    // permitir submit por Enter no form (se quiser), mas aqui usamos botão
+    btn.addEventListener('click', () => {
+      const tipo = tipoEl.value.trim();
+      const data = dataEl.value;
+      const hora = horaEl.value;
+      const desc = descEl.value.trim();
+
+      if (!tipo) {
+        mostrarMsg('Selecione o tipo de espaço.', 'erro');
+        tipoEl.focus();
+        return;
       }
 
-      diasDoMes.appendChild(tr);
-    }
-  }
+      if (!data) {
+        mostrarMsg('Escolha uma data.', 'erro');
+        dataEl.focus();
+        return;
+      }
 
-  // === SELECIONAR DIA ===
-  function selecionarDia(event, dia, mes, ano) {
-    document.querySelectorAll(".calendario td").forEach(td =>
-      td.classList.remove("selecionado")
-    );
-    event.currentTarget.classList.add("selecionado");
+      if (!dataEhValida(data)) {
+        mostrarMsg('A data escolhida é anterior a hoje. Escolha outra data.', 'erro', 4000);
+        dataEl.focus();
+        return;
+      }
 
-    const dataISO = `${ano}-${String(mes + 1).padStart(2, "0")}-${String(dia).padStart(2, "0")}`;
-    dataSelecionadaInput.value = dataISO;
-    atualizarHorarios();
-  }
+      if (!hora) {
+        mostrarMsg('Selecione um horário.', 'erro');
+        horaEl.focus();
+        return;
+      }
 
-  // === ATUALIZAR HORÁRIOS ===
-  function atualizarHorarios() {
-    const local = localSelect.value;
-    const data = dataSelecionadaInput.value;
-    horarioSelect.innerHTML = "<option value=''>Selecione horário</option>";
+      // montar objeto reserva
+      const reserva = {
+        id: Date.now(),             // id simples para referência futura
+        tipo,
+        data,
+        hora,
+        descricao: desc
+      };
 
-    if (!local || !data) return;
+      try {
+        const chave = 'reservas';
+        const historico = JSON.parse(localStorage.getItem(chave)) || [];
+        historico.push(reserva);
+        localStorage.setItem(chave, JSON.stringify(historico));
+        mostrarMsg('Reserva feita com sucesso!', 'sucesso', 3500);
+        form.reset();
 
-    const horariosDisponiveis = horarios[local];
-    const horariosReservados = reservas[local][data] || [];
-
-    horariosDisponiveis.forEach(h => {
-      const opt = document.createElement("option");
-      opt.value = h;
-      opt.textContent = horariosReservados.includes(h) ? `${h} (Ocupado)` : h;
-      opt.disabled = horariosReservados.includes(h);
-      horarioSelect.appendChild(opt);
+        // opcional: emitir evento custom para outras partes da app ouvirem
+        const evt = new CustomEvent('reservaCriada', { detail: reserva });
+        document.dispatchEvent(evt);
+      } catch (err) {
+        console.error('Erro ao salvar reserva:', err);
+        mostrarMsg('Erro ao salvar reserva. Tente novamente.', 'erro');
+      }
     });
   }
 
-  // === MUDAR LOCAL E FINALIDADES ===
-  localSelect.addEventListener("change", () => {
-    const local = localSelect.value;
-    finalidadeSelect.innerHTML = "";
-
-    if (!local) {
-      finalidadeSelect.disabled = true;
-      finalidadeSelect.innerHTML = "<option value=''>Selecione o local primeiro</option>";
-      return;
-    }
-
-    finalidadeSelect.disabled = false;
-    finalidades[local].forEach(f => {
-      const opt = document.createElement("option");
-      opt.value = f;
-      opt.textContent = f;
-      finalidadeSelect.appendChild(opt);
-    });
-
-    atualizarHorarios();
-  });
-
-  // === NAVEGAÇÃO ENTRE MESES ===
-  document.getElementById("mesAnterior").addEventListener("click", () => {
-    dataAtual.setMonth(dataAtual.getMonth() - 1);
-    gerarCalendario();
-  });
-
-  document.getElementById("mesSeguinte").addEventListener("click", () => {
-    dataAtual.setMonth(dataAtual.getMonth() + 1);
-    gerarCalendario();
-  });
-
-  // === CONFIRMAR RESERVA ===
-  document.getElementById("formReserva").addEventListener("submit", e => {
-    e.preventDefault();
-
-    const local = localSelect.value;
-    const horario = horarioSelect.value;
-    const data = dataSelecionadaInput.value;
-    const finalidade = finalidadeSelect.value;
-
-    if (!local || !horario || !data || !finalidade) {
-      status.textContent = "Por favor, selecione data, local, horário e finalidade.";
-      definirCorStatus("erro");
-      return;
-    }
-
-    if (!reservas[local][data]) reservas[local][data] = [];
-    if (reservas[local][data].includes(horario)) {
-      status.textContent = "Esse horário já está reservado.";
-      definirCorStatus("erro");
-      return;
-    }
-
-    reservas[local][data].push(horario);
-    const dataLegivel = new Date(data).toLocaleDateString("pt-BR", {
-      day: "2-digit",
-      month: "long",
-      year: "numeric"
-    });
-
-    status.innerHTML = `Reserva confirmada para <strong>${dataLegivel}</strong> às <strong>${horario}</strong> em <strong>${local}</strong> — Finalidade: <strong>${finalidade}</strong>.`;
-    definirCorStatus("sucesso");
-
-    e.target.reset();
-    finalidadeSelect.disabled = true;
-    finalidadeSelect.innerHTML = "<option value=''>Selecione o local primeiro</option>";
-    dataSelecionadaInput.value = "";
-    gerarCalendario();
-  });
-
-  gerarCalendario();
-});
-
-
-/* ============================
-   TEMA CLARO / ESCURO
-   ============================ */
-
-// Carregar tema salvo
-document.addEventListener("DOMContentLoaded", () => {
-  const temaSalvo = localStorage.getItem("sae-tema");
-
-  if (temaSalvo === "claro") {
-    document.body.classList.add("modo-claro");
+  // Inicialização única
+  function init() {
+    initDropdown();
+    initThemeToggle();
+    initForm();
   }
 
-  atualizarIconeTema();
-});
+  // start
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 
-// Botão para alternar tema
-document.getElementById("themeToggle").addEventListener("click", () => {
-  document.body.classList.toggle("modo-claro");
-
-  const modoClaroAtivo = document.body.classList.contains("modo-claro");
-
-  localStorage.setItem("sae-tema", modoClaroAtivo ? "claro" : "escuro");
-
-  atualizarIconeTema();
-});
-
-// Ajustar ícone do botão
-function atualizarIconeTema() {
-  const botao = document.getElementById("themeToggle");
-  const modoClaro = document.body.classList.contains("modo-claro");
-
-  botao.textContent = modoClaro ? "☀️" : "🌙";
-}
+})();

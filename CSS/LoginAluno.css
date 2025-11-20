@@ -170,10 +170,14 @@ nav button:hover,
   display: none;
   position: absolute;
   right: 0;
-  background: rgba(0, 60, 80, 0.95);
+  background: rgba(13, 86, 110, 0.95);
   border-radius: 8px;
   overflow: hidden;
   min-width: 160px;
+}
+
+.dropdown-content.show {
+  display: block;
 }
 
 .dropdown-content a {
@@ -188,11 +192,6 @@ nav button:hover,
 
 .dropdown-content a:hover {
   background: rgba(0, 150, 190, 0.8);
-}
-
-.dropbtn:focus + .dropdown-content,
-.dropdown:hover .dropdown-content {
-  display: block;
 }
 
 /* === CONTEÚDO === */

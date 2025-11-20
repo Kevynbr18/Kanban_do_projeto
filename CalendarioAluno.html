@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sistema de Reservas</title>
-  <link rel="stylesheet" href="./CSS/FazerReserva.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fazer Reserva - Aluno</title>
+  <link rel="stylesheet" href="./CSS/CalendarioAluno.css">
 </head>
 <body>
-  <header>
+   <header >
     <div class="logo">
-      <img src="./imagem/logo_sem_fundo(1).png" alt="Logo SAE">
+      <img src="./imagem/logo_sem_fundo(1).png" alt="SAE logo" class="logo">
       <h1>SAE - Sistema de Agendamento Escolar</h1>
     </div>
 
-    <nav>
+     <nav>
+      <button id="themeToggle" aria-label="Alternar tema">🌙</button>
       <a href="LoginAluno.html"><button>Início</button></a>
+      <a href="CalendarioAluno.html"><button>Calendário</button></a>
       <a href="Administracao.html"><button>Administração</button></a>
-      <a href="LoginProfessor.html"><button>Login do Professor</button></a>
 
       <div class="dropdown">
         <button class="dropbtn">Olá, Aluno!</button>
@@ -24,42 +25,67 @@
           <a href="./PerfilDoAluno/PerfilAluno.html"><img src="imagem/IconPersona.png" width="20">Perfil</a>
           <a href="./PerfilDoAluno/ConfigAluno.html"><img src="imagem/Config.png" alt="">Configuração</a>
           <a href="./PerfilDoAluno/"><img src="imagem/Notificacao.png" width="20">Notificações</a>
-          <a href="index.html"><b>Sair</b><img src="./imagem/Saida.png" alt="Sair"></a>
+          <a href="index.html"><b>Sair</b><img src="imagem/Saida.png" alt="Sair"></a>
         </div>
       </div>
     </nav>
   </header>
 
-  <main class="container">
-    <!-- ===== CALENDÁRIO ===== -->
-    <section class="calendario">
-      <h2>Disponibilidade do Mês</h2>
-      <div class="mes-controles">
-        <button id="mesAnterior">&lt;</button>
-        <span id="mesAno"></span>
-        <button id="mesSeguinte">&gt;</button>
+  
+  <!-- CONTAINER CENTRAL -->
+  <main class="reserva-container">
+    <h2>Selecione o dia da reserva</h2>
+
+    <!-- Legendas -->
+    <div class="legenda-container">
+      <div class="legenda-item"><span class="legenda-dot" style="background:#f4d03f"></span>Trabalho</div>
+      <div class="legenda-item"><span class="legenda-dot" style="background:#3498db"></span>Apresentação</div>
+      <div class="legenda-item"><span class="legenda-dot" style="background:#e74c3c"></span>Prova</div>
+      <div class="legenda-item"><span class="legenda-dot" style="background:#ff7f50"></span>Futsal</div>
+      <div class="legenda-item"><span class="legenda-dot" style="background:#7fff00"></span>Vôlei</div>
+      <div class="legenda-item"><span class="legenda-dot" style="background:#ff69b4"></span>Handebol</div>
+      <div class="legenda-item"><span class="legenda-dot" style="background:#ffa500"></span>Treino Livre</div>
+      <div class="legenda-item"><span class="legenda-dot" style="background:#8a2be2"></span>Estudo individual</div>
+      <div class="legenda-item"><span class="legenda-dot" style="background:#00ced1"></span>Grupo de estudo</div>
+      <div class="legenda-item"><span class="legenda-dot" style="background:#dc143c"></span>Pesquisa</div>
+      <div class="legenda-item"><span class="legenda-dot" style="background:#1e90ff"></span>Computação</div>
+      <div class="legenda-item"><span class="legenda-dot" style="background:#32cd32"></span>Robótica</div>
+      <div class="legenda-item"><span class="legenda-dot" style="background:#ff4500"></span>Ciências</div>
+      <div class="legenda-item"><span class="legenda-dot" style="background:#ffd700"></span>Reunião</div>
+      <div class="legenda-item"><span class="legenda-dot" style="background:#00fa9a"></span>Aula de reforço</div>
+      <div class="legenda-item"><span class="legenda-dot" style="background:#808080"></span>Outro tipo de atividade</div>
+    </div>
+
+
+    <!-- CALENDÁRIO -->
+    <div class="calendar">
+      <div class="cal-header">
+        <button id="prevMonth">&lt;</button>
+        <span id="monthTitle">Mês Ano</span>
+        <button id="nextMonth">&gt;</button>
       </div>
-      <table>
+      <table class="calendar-table">
         <thead>
           <tr>
             <th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th>
           </tr>
         </thead>
-        <tbody id="diasDoMes"></tbody>
+        <tbody id="calendarBody"></tbody>
       </table>
-    </section>
+    </div>
+  </main>
 
-    <!-- ===== FORMULÁRIO ===== -->
-    <section class="formulario">
-      <h2>Fazer Reserva</h2>
+  <!-- MODAL DE RESERVA -->
+  <div id="reservaModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <h2>Reservas do dia</h2>
+      <div id="listaReservas">Selecione um dia no calendário.</div>
+      <hr>
+      <h3>Adicionar nova reserva</h3>
       <form id="formReserva">
         <label for="local">Local:</label>
         <select id="local" required>
           <option value="">Selecione</option>
-          <option value="quadra">Quadra</option>
-          <option value="biblioteca">Biblioteca</option>
-          <option value="laboratorio">Laboratório</option>
-          <option value="sala">Sala de Aula</option>
         </select>
 
         <label for="horario">Horário:</label>
@@ -68,18 +94,20 @@
         </select>
 
         <label for="finalidade">Finalidade:</label>
-        <select id="finalidade" disabled required>
+        <select id="finalidade" required disabled>
           <option value="">Selecione o local primeiro</option>
         </select>
 
         <input type="hidden" id="dataSelecionada">
+
         <button type="submit">Confirmar Reserva</button>
       </form>
+      <button onclick="fecharModal()">Fechar</button>
       <p id="reservaStatus"></p>
-    </section>
-  </main>
+    </div>
+  </div>
 
-  <!-- ===== RODAPÉ ===== -->
+  <!-- RODAPÉ -->
   <footer>
     <div class="footer-container">
       <div class="footer-col">
@@ -99,16 +127,15 @@
           <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook.png" alt="Facebook"></a>
           <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" alt="Instagram"></a>
           <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/whatsapp.png" alt="WhatsApp"></a>
-          <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/tiktok.png" alt="TikTok"></a>
+          <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/twitter.png" alt="twitter"></a>
         </div>
       </div>
     </div>
-
     <div class="footer-bottom">
       <p>&copy; 2025 Escola Modelo — Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <script src="../Projeto/JS/FazerReservar.js"></script>
+  <script src="./JS/CalendarioAluno.js"></script>
 </body>
 </html>

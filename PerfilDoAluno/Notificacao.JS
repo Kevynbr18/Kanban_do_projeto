@@ -1,15 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* =====================
-       NOTIFICAÇÕES
-    ===================== */
     const lista = document.getElementById("listaNotificacoes");
     const btnMarcarTodas = document.getElementById("marcarTodasBtn");
 
     let notificacoes = [
         { id: 1, titulo: "Reserva confirmada", msg: "Sua reserva da sala 203 foi aprovada.", lida: false },
         { id: 2, titulo: "Lembrete", msg: "Você possui uma reserva para amanhã às 14h.", lida: true },
-        { id: 3, titulo: "Aviso importante", msg: "A escola estará fechada no sábado.", lida: false }
+        { id: 3, titulo: "Aviso importante", msg: "A escola estará fechada no sábado.", lida: false },
+        { id: 4, titulo: "Aviso importante", msg: "A sala em que sera realizada prova foi alterada pra sala-21.", lida: true },
+        { id: 5, titulo: "Aviso importante", msg: "Suas tarefas de Matematica estão atrasadas .", lida: false }
     ];
 
     function carregarNotificacoes() {
@@ -18,14 +17,19 @@ document.addEventListener("DOMContentLoaded", () => {
         notificacoes.forEach(notif => {
             const item = document.createElement("div");
             item.classList.add("notificacao");
-            if (!notif.lida) item.classList.add("nao-lida");
+            item.classList.add(notif.lida ? "lida" : "nao-lida");
+
+            // Ícone: ✅ se lida, ⚠️ se não lida
+            const icone = notif.lida ? "✅" : "⚠️";
 
             item.innerHTML = `
-                <div class="titulo">${notif.titulo}</div>
-                <div class="mensagem">${notif.msg}</div>
+                <div class="texto">
+                    <div class="titulo">${icone} ${notif.titulo}</div>
+                    <div class="mensagem">${notif.msg}</div>
+                </div>
                 ${
                     notif.lida
-                    ? `<small style="color:white; background: #009245; border-radius: 6px; padding: 6px 10px; border: 1px solid #009245">Lida</small>`
+                    ? `<span class="badge-lida">Lida</span>`
                     : `<button class="btnLer" data-id="${notif.id}">Marcar como lida</button>`
                 }
             `;
@@ -45,12 +49,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Botão "Marcar todas como lidas"
     btnMarcarTodas.addEventListener("click", () => {
         notificacoes = notificacoes.map(n => ({ ...n, lida: true }));
         carregarNotificacoes();
     });
 
+    // Inicializar
     carregarNotificacoes();
+
+
 
 
     /* =====================

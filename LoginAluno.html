@@ -92,32 +92,18 @@
   </footer>
 
   <script>
-    // Dropdown menu
-    const dropBtn = document.querySelector('.dropbtn');
-    const dropContent = document.querySelector('.dropdown-content');
 
-    dropBtn.addEventListener('click', () => {
-      dropContent.classList.toggle('show');
-    });
+// Abre/fecha ao clicar
+document.querySelector('.dropbtn').addEventListener('click', function (e) {
+  e.stopPropagation(); 
+  document.querySelector('.dropdown-content').classList.toggle('show');
+});
 
-    window.addEventListener('click', (e) => {
-      if (!e.target.closest('.dropdown')) dropContent.classList.remove('show');
-    });
-
-    
-/* ============================
-   TEMA CLARO / ESCURO
-   ============================ */
-
-// Carregar tema salvo
-document.addEventListener("DOMContentLoaded", () => {
-  const temaSalvo = localStorage.getItem("sae-tema");
-
-  if (temaSalvo === "claro") {
-    document.body.classList.add("modo-claro");
+// Fecha clicando fora
+window.addEventListener('click', function (event) {
+  if (!event.target.closest('.dropdown')) {
+    document.querySelector('.dropdown-content').classList.remove('show');
   }
-
-  atualizarIconeTema();
 });
 
 // Botão para alternar tema
