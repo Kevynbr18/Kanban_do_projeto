@@ -283,7 +283,7 @@ body.modo-claro p{
 
     .social-icons img {
       width: 26px;
-      filter: brightness(1);
+      filter: brightness(0);
       transition: transform 0.3s, filter 0.3s;
       cursor: pointer;
     }

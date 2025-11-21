@@ -193,14 +193,11 @@ button#btnReservar:hover {
   font-size: 15px;
 }
 
-/* ===========================
-   FOOTER
-=========================== */
 footer {
   background: linear-gradient(to top, #00282b, #003b41);
   color: #d8f7ff;
-  padding: 35px 24px;
-  border-top: 2px solid #006c7a;
+  padding: 30px 150px 10px;
+  border-top: 1px solid #005c64;
   margin-top: auto;
 }
 
@@ -208,46 +205,61 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 45px;
-  max-width: 1100px;
+  align-items: flex-start;
+  gap: 60px;
+  max-width: 1000px;
   margin: auto;
+  text-align: left;
 }
 
 .footer-col h3 {
   font-size: 18px;
   margin-bottom: 10px;
-  color: #a8e9ff;
-  border-bottom: 1px solid #00c2d1;
+  color: #b5eaff;
+  border-bottom: 1px solid #00a3b0;
   padding-bottom: 6px;
 }
 
-.footer-col a, .footer-col p {
+.footer-col a,
+.footer-col p {
   color: #d8f7ff;
   text-decoration: none;
   font-size: 14px;
 }
 
 .footer-col a:hover {
-  color: white;
+  color: #fff;
   text-decoration: underline;
 }
 
+.social-icons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-top: 10px;
+}
+
 .social-icons img {
-  width: 28px;
-  filter: brightness(0) invert(1);
-  transition: transform .3s;
+  width: 26px;
+  filter: brightness(0);
+  transition: transform 0.3s, filter 0.3s;
+  cursor: pointer;
 }
 
 .social-icons img:hover {
-  transform: scale(1.18);
+  transform: scale(1.15);
+  filter: brightness(0);
 }
 
 .footer-bottom {
-  margin-top: 25px;
   text-align: center;
+  margin-top: 25px;
   font-size: 13px;
-  color: #b8eefa;
+  color: #a7d8e6;
+  border-top: 1px solid #004c55;
+  padding-top: 10px;
 }
+
 
 /* ===========================
    MODO CLARO
