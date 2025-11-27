@@ -1,0 +1,378 @@
+/* =========================================================
+   RESET E BASE
+=========================================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #003d40, #002a2b);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   MODO CLARO (APERFEIÇOADO)
+=========================================================*/
+
+body.modo-claro {
+  background: #d9fbff;
+  color: #003238;
+}
+
+/* Header */
+body.modo-claro header {
+  background: #00a5b8;
+  color: #000;
+  border-bottom: 2px solid #00808c;
+}
+
+/* Logo */
+body.modo-claro header .logo img {
+  filter: none;
+}
+
+/* Botões do header */
+body.modo-claro nav button,
+body.modo-claro .dropbtn {
+  background: #008ba0;
+  color: #fff;
+  border: 1px solid #004d55;
+}
+
+body.modo-claro nav button:hover,
+body.modo-claro .dropbtn:hover {
+  background: #00bfd6;
+}
+
+/* Dropdown */
+body.modo-claro .dropdown-content {
+  background: #e6fdff;
+  border: 1px solid #b9f4ff;
+}
+
+body.modo-claro .dropdown-content a {
+  color: #00353b;
+}
+
+body.modo-claro .dropdown-content a:hover {
+  background: #c4f8ff;
+}
+
+/* Formulário e abas */
+body.modo-claro .config-container {
+  background: #c7f7ff;
+  color: #003238;
+}
+
+body.modo-claro .aba {
+  background: #009eb4;
+}
+
+body.modo-claro .aba.ativa {
+  background: #00c6e7;
+  color: black;
+}
+
+body.modo-claro input,
+body.modo-claro select {
+  background: #eaffff;
+  color: #003238;
+  border: 1px solid #78e0f0;
+}
+
+body.modo-claro button[type="submit"] {
+  background: #007bd1;
+}
+
+/* Link Voltar */
+body.modo-claro .botao-voltar {
+  background: #00a1b8;
+  color: white;
+}
+
+/* Footer */
+body.modo-claro footer {
+  background: #00dffc;
+  color: #003238;
+}
+
+body.modo-claro .footer-col h3 {
+  color: #002c2f;
+  border-bottom: 1px solid #003f44;
+}
+
+body.modo-claro .footer-col a {
+  color: #004d53;
+}
+
+body.modo-claro .footer-col a:hover {
+  color: #ff0000;
+}
+
+body.modo-claro p {
+  color: #00383d;
+}
+
+body.modo-claro .footer-bottom {
+  color: #003f44;
+  border-top: 1px solid #008ea0;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+=========================================================*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, #004952, #002a2b);
+  padding: 12px 24px;
+  border-bottom: 2px solid #007788;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  filter: contrast(120%) saturate(250%) brightness(130%);
+}
+
+header h1 {
+  font-size: 1.3em;
+}
+
+/* NAV */
+header nav {
+  display: flex;
+  gap: 10px;
+}
+
+header nav button {
+  background: #007788;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+header nav button:hover {
+  background: #00a6b8;
+}
+
+/* =========================================================
+   DROPDOWN
+=========================================================*/
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  background-color: #006672;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.dropbtn:hover {
+  background-color: #008499;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background-color: #004d59;
+  border-radius: 6px;
+  min-width: 180px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  z-index: 10;
+}
+
+.dropdown-content a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #006672;
+}
+
+.show {
+  display: block;
+}
+
+/* =========================================================
+   CONTAINER DAS CONFIGURAÇÕES
+=========================================================*/
+.config-container {
+  flex: 1;
+  max-width: 700px;
+  margin: 40px auto;
+  background: rgb(0, 90, 110);
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* ABAS */
+.abas {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.aba {
+  background: rgba(0, 191, 255, 0.8);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.aba:hover {
+  background: #00252b;
+}
+
+.aba.ativa {
+  background: #00b8d4;
+  font-weight: bold;
+}
+
+/* Conteúdo das abas */
+.aba-conteudo {
+  display: none;
+}
+
+.aba-conteudo.ativo {
+  display: block;
+}
+
+/* =========================================================
+   FORMULÁRIOS
+=========================================================*/
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input,
+select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+button[type="submit"] {
+  margin-top: 10px;
+  padding: 10px;
+  background: rgba(22, 0, 220, 0.85);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.botao-voltar {
+  display: block;
+  text-align: center;
+  margin-top: 25px;
+  background: rgba(0, 90, 120, 0.8);
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================================
+   RODAPÉ
+=========================================================*/
+footer {
+  background: linear-gradient(to top, #00282b, #003b41);
+  color: #d8f7ff;
+  padding: 30px 150px 10px;
+  border-top: 1px solid #005c64;
+  margin-top: auto;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #b5eaff;
+  border-bottom: 1px solid #00a3b0;
+  padding-bottom: 6px;
+}
+
+.footer-col a,
+.footer-col p {
+  color: #d8f7ff;
+  font-size: 14px;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 26px;
+  filter: brightness(0);
+  transition: transform 0.3s, filter 0.3s;
+  cursor: pointer;
+}
+
+.social-icons img:hover {
+  transform: scale(1.15);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 13px;
+  color: #a7d8e6;
+  border-top: 1px solid #004c55;
+  padding-top: 10px;
+}

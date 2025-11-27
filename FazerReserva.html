@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazer Reserva</title>
+    <link rel="stylesheet" href="./CSS/FazerReserva.css">
+</head>
+<body>
+
+    <!-- ===========================
+         HEADER
+    ============================ -->
+    <header>
+        <div class="logo">
+            <img src="./imagem/logo_sem_fundo(1).png" alt="Logo SAE - Sistema de Agendamento Escolar">
+            <h1>SAE - Sistema de Agendamento Escolar</h1>
+        </div>
+
+        <nav>
+            <button id="themeToggle" aria-label="Alternar tema">🌙</button>
+
+            <a href="LoginAluno.html"><button type="button">Início</button></a>
+            <a href="CalendarioAluno.html"><button type="button">Calendário</button></a>
+            <a href="Administracao.html"><button type="button">Administração</button></a>
+
+            <!-- MENU DROPDOWN DO PERFIL -->
+            <div class="dropdown">
+                <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Olá, Aluno!</button>
+
+                <div class="dropdown-content">
+                    <a href="./PerfilDoAluno/PerfilAluno.html">
+                        <img src="./imagem/IconPersona.png" width="20" alt="Ícone Perfil">
+                        Perfil
+                    </a>
+
+                    <a href="./PerfilDoAluno/ConfigAluno.html">
+                        <img src="./imagem/Config.png" width="20" alt="Ícone Configuração">
+                        Configuração
+                    </a>
+
+                    <a href="./PerfilDoAluno/">
+                        <img src="./imagem/Notificacao.png" width="20" alt="Ícone Notificações">
+                        Notificações
+                    </a>
+
+                    <a href="index.html">
+                        <b>Sair</b>
+                        <img src="./imagem/Saida.png" width="20" alt="Sair">
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- ===========================
+         CONTEÚDO PRINCIPAL
+    ============================ -->
+    <main class="container">
+
+        <form id="formReserva" class="card">
+
+            <h2 style="text-align:center; margin-bottom:10px;">Fazer Reserva</h2>
+
+            <!-- TIPO -->
+            <label for="tipoEspaco">Tipo de Espaço:</label>
+            <select id="tipoEspaco">
+                <option value="">Selecione...</option>
+                <option value="Laboratório">Laboratório</option>
+                <option value="Quadra">Quadra</option>
+                <option value="Sala">Sala</option>
+                <option value="Outros">Outros</option>
+            </select>
+
+            <!-- DATA -->
+            <label for="dataReserva">Data da Reserva:</label>
+            <input type="date" id="dataReserva">
+
+            <!-- HORÁRIO -->
+            <label for="horaReserva">Horário:</label>
+            <input type="time" id="horaReserva">
+
+            <!-- DESCRIÇÃO -->
+            <label for="descricao">Descrição (opcional):</label>
+            <textarea id="descricao" placeholder="Ex: aula prática, reunião, evento..."></textarea>
+
+            <!-- BOTÃO -->
+            <button type="button" id="btnReservar">Confirmar Reserva</button>
+
+        </form>
+
+        <p id="msg" class="msg"></p>
+
+    </main>
+
+
+
+    <!-- RODAPÉ -->
+ <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Quer saber mais sobre a Escola?</h3>
+        <p><a href="#">Clique aqui</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Suporte</h3>
+        <p>(99) 1234-5678</p>
+        <p><a href="#">Atendimento via Chat</a></p>
+      </div>
+
+     <div class="footer-col">
+        <h3>Contato</h3>
+        <div class="social-icons">
+          <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook.png" alt="Facebook"></a>
+          <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" alt="Instagram"></a>
+          <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/whatsapp.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/twitter.png" alt="twitter"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Escola Modelo — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+
+    <!-- SCRIPTS -->
+    <script src="./JS/FazerReservar.js"></script>
+
+</body>
+</html>

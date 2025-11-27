@@ -1,0 +1,513 @@
+/* ===================== */
+/*  ESTILO GERAL         */
+/* ===================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #003d40, #002a2b);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===================== */
+/*  CABEÇALHO            */
+/* ===================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: linear-gradient(to bottom, #004952, #002a2b);
+  padding: 12px 24px;
+  border-bottom: 2px solid #007788;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  filter: contrast(120%) saturate(250%) brightness(130%);
+}
+
+header h1 {
+  font-size: 1.3em;
+  color: #ffffff;
+}
+
+/* Navegação */
+header nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+header nav button {
+  background: #007788;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+header nav button:hover {
+  background: #00a6b8;
+}
+
+/* ===================== */
+/*  DROPDOWN DO USUÁRIO  */
+/* ===================== */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #007788;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.3s;
+}
+
+.dropbtn:hover {
+  background: #00a6b8;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #014754;
+  border-radius: 6px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+  z-index: 10;
+  overflow: hidden;
+  min-width: 180px;
+}
+
+.dropdown-content a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  padding: 10px 14px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+  background: #007788;
+}
+
+.show {
+  display: block;
+}
+
+/* =============================
+   MODO CLARO APERFEIÇOADO
+============================= */
+
+body.modo-claro {
+  background: #29cce6;
+  color: #0c2e33;
+}
+
+/* Header */
+body.modo-claro header {
+  background: #00879c;
+  color: #000000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.342);
+}
+
+/* Navegação */
+body.modo-claro nav button,
+body.modo-claro .dropbtn {
+  border: #000000 1px solid;
+  color: #ffffff;
+}
+
+
+body.modo-claro nav button:hover,
+body.modo-claro .dropbtn:hover {
+  color: #ffffff;
+  background: #00bfa5;
+}
+
+/* Dropdown */
+body.modo-claro .dropdown-content {
+  background: #e8fafd;
+  border: 1px solid #b7e8ee;
+}
+
+body.modo-claro .dropdown-content a {
+  color: #000505;
+}
+
+body.modo-claro .dropdown-content a:hover {
+  background: #b4f3fa;
+}
+
+
+/*cards*/
+body.modo-claro .card {
+  background: #ffffff;
+  color: #02283a;
+  box-shadow: 0 6px 18px rgba(10,25,47,0.1);
+}
+
+body.modo-claro .card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Status */
+body.modo-claro .status-aprovado {
+  background: #00ff4c;
+}
+body.modo-claro .status-rejeitado {
+  background: red;
+}
+body.modo-claro .status-pendente {
+  background: #ff9d00;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+
+/* Social icons */
+body.modo-claro .social-icons img {
+  filter: brightness(0.1);
+}
+
+body.modo-claro a {
+  color: #004d53;
+}
+
+body.modo-claro a:hover {
+  color: #ff0000;
+}
+
+/* Footer */
+body.modo-claro footer {
+  background: #00e5ff;
+  color: #003135;
+  border-top: 1px solid #97d9e2;
+}
+
+body.modo-claro .footer-col h3 {
+  color: #000000;
+  border-bottom: 1px solid #000000;
+}
+
+body.modo-claro p{
+  color: #004b50;
+}
+
+/* ===================== */
+/*  CONTEÚDO PRINCIPAL   */
+/* ===================== */
+main.container {
+  flex: 1;
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Cabeçalho interno */
+.reservas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #007788;
+  padding-bottom: 10px;
+}
+
+.reservas-header h1 {
+  font-size: 1.5em;
+  color: #ffffff;
+}
+
+.reservas-header .ver-todas {
+  color: #66ccff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.reservas-header .ver-todas:hover {
+  text-decoration: underline;
+}
+
+/* ===================== */
+/*  CARDS DE RESERVAS    */
+/* ===================== */
+.card {
+  background: #007fb9;
+  color: #02283a;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  box-shadow: 0 6px 18px rgba(10,25,47,0.1);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  flex-wrap: wrap;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Imagem da sala */
+.room-image {
+  width: 130px;
+  height: 90px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #dff6ff, #c8ebff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: #0095ff;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+/* Informações principais */
+.card-main {
+  flex: 1;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.room-name {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.meta small {
+  font-size: 13px;
+  color: #000000;
+}
+
+/* Status */
+.badge {
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.status-aprovado {
+  background: #008b2a;
+  color: #080808;
+  border: 1px solid #000000;
+}
+
+.status-pendente {
+  background: rgb(180, 117, 0);
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+.status-rejeitado {
+  background: #970000;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+/* Descrição */
+.details {
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 12px;
+}
+
+/* Progresso */
+.progress {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #000000;
+}
+
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff6600;
+  border: 1px solid #000000;
+}
+
+.dot.aver{
+  background: #ffffff;
+  border-color: #000000;
+}
+.dot.active {
+  background: #60a5fa;
+  border-color: #000000;
+}
+
+.dot.aceita {
+  background: #00ff4c;
+  border-color: #000000;
+}
+
+.dot.reject {
+  background: #ff0000;
+  border-color: #000000;
+}
+
+/* ===== RODAPÉ ===== */
+    footer {
+      background: linear-gradient(to top, #00282b, #003b41);
+      color: #d8f7ff;
+      padding: 30px 150px 10px;
+      border-top: 1px solid #005c64;
+      margin-top: auto;
+    }
+
+   .footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+    .footer-col h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #b5eaff;
+      border-bottom: 1px solid #00a3b0;
+      padding-bottom: 6px;
+    }
+
+    .footer-col a,
+    .footer-col p {
+      color: #d8f7ff;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+
+    .footer-col a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: flex-start;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .social-icons img {
+      width: 26px;
+      filter: brightness(0);
+      transition: transform 0.3s, filter 0.3s;
+      cursor: pointer;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.15);
+      filter: brightness(0);
+    }
+
+    /* Linha final do rodapé */
+.footer-bottom {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 13px;
+  color: #a7d8e6;
+  border-top: 1px solid #004c55;
+  padding-top: 10px;
+}
+
+
+.footer-coleft,
+.footer-coright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-img-left,
+.footer-img-right {
+  width: 100px;
+}
+
+/* ===================== */
+/*  RESPONSIVIDADE       */
+/* ===================== */
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header nav {
+    margin-top: 10px;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .room-image {
+    width: 100%;
+    height: 100px;
+  }
+
+  .reservas-header {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
