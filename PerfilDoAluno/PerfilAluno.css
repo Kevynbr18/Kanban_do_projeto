@@ -62,7 +62,7 @@ body.modo-claro .perfil-container h2{
 }
 
 body.modo-claro .info strong{
-    color: rgb(0, 0, 0);
+    color: rgb(255, 252, 252);
 }
 body.modo-claro .info p{
     color: white;
