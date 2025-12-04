@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Salas Ocupadas</title>
+  <link rel="stylesheet" href="./CSS/SalasOcupados.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="imagem/logo_sem_fundo(1).png" alt="Logo SAE" />
+      <h1>SAE - Sistema de Agendamento Escolar</h1>
+    </div>
+
+    <nav>
+      <button id="themeToggle" aria-label="Alternar tema">🌙</button>
+      <a href="LoginProfessor.html"><button>Início</button></a>
+      <a href="CalendarioProf.html"><button>Calendário</button></a>
+      <a href="Historico.html"><button>Histórico</button></a>
+    </nav>
+
+    <div class="dropdown">
+      <button class="dropbtn">Olá, Professor!</button>
+      <div class="dropdown-content">
+        <a href="./PerfilProfessor/PerfilProfessor.html"><img src="./imagem/IconPersona.png" alt="">Perfil</a>
+        <a href="./PerfilProfessor/ConfiguracoesProfessor.html"><img src="./imagem/Config.png" alt="">Configuração</a>
+        <a href="./PerfilProfessor/NotificacoesProfessor.html"><img src="./imagem/Notificacao.png" alt="">Notificações</a>
+          <a href="../index.html"><img src="./imagem/Saida.png" alt="">Sair</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h2>Salas Ocupadas</h2>
+    <div class="container">
+      <div class="card">
+        <h3>Laboratório Nº 12</h3>
+        <p><strong>Data:</strong> 08/11/2025</p>
+        <p><strong>Horário:</strong> 14:00 - 16:00</p>
+        <p><strong>Motivo:</strong> Aula prática de Física</p>
+        <p><strong>Prf(A):</strong> Douglas salgoud</p>
+
+        <!-- BOTÕES DE AÇÃO -->
+  <div class="card-actions">
+      <button class="btn-detalhes">Detalhes</button>
+      <button class="btn-editar">Editar</button>
+      <button class="btn-excluir">Excluir</button>
+  </div>
+      </div>
+
+      <div class="card">
+        <h3>Sala de Reunião Nº 3</h3>
+        <p><strong>Data:</strong> 08/11/2025</p>
+        <p><strong>Horário:</strong> 09:00 - 11:00</p>
+        <p><strong>Motivo:</strong> Reunião com equipe pedagógica</p>
+        <p><strong>Prf(A):</strong> Luiza de Paula</p>
+
+        <!-- BOTÕES DE AÇÃO -->
+  <div class="card-actions">
+      <button class="btn-detalhes">Detalhes</button>
+      <button class="btn-editar">Editar</button>
+      <button class="btn-excluir">Excluir</button>
+  </div>
+      </div>
+
+      <div class="card">
+        <h3>Biblioteca Nº 1</h3>
+        <p><strong>Data:</strong> 09/11/2025</p>
+        <p><strong>Horário:</strong> 10:00 - 12:00</p>
+        <p><strong>Motivo:</strong> Preparação pra provas</p>
+        <p><strong>Prof(A):</strong> Nicolas richards</p>
+
+        <!-- BOTÕES DE AÇÃO -->
+  <div class="card-actions">
+      <button class="btn-detalhes">Detalhes</button>
+      <button class="btn-editar">Editar</button>
+      <button class="btn-excluir">Excluir</button>
+  </div>
+      </div>
+
+      <div class="card">
+        <h3>Laboratório de Informática Nº 5</h3>
+        <p><strong>Data:</strong> 09/11/2025</p>
+        <p><strong>Horário:</strong> 13:00 - 15:00</p>
+        <p><strong>Motivo:</strong> desenvolvimento web</p>
+        <p><strong>Prof(A):</strong> James drax</p>
+
+        <!-- BOTÕES DE AÇÃO -->
+  <div class="card-actions">
+      <button class="btn-detalhes">Detalhes</button>
+      <button class="btn-editar">Editar</button>
+      <button class="btn-excluir">Excluir</button>
+  </div>
+      </div>
+    </div>
+
+<!-- MODAL DETALHES -->
+<div id="modalDetalhes" class="modal">
+  <div class="modal-content">
+    <span class="fechar fechar-detalhes">&times;</span>
+    <h3 id="modalTitulo"></h3>
+    <div id="modalInfo"></div>
+  </div>
+</div>
+
+<!-- MODAL EDITAR -->
+<div id="modalEditar" class="modal">
+  <div class="modal-content">
+    <span class="fechar fechar-editar">&times;</span>
+    <h3>Editar Reserva</h3>
+
+    <form id="formEditar">
+      <label>Nome da Sala:</label>
+      <input type="text" id="editarTitulo" required>
+
+      <label>Data:</label>
+      <input type="date" id="editarData" required>
+
+      <label>Horário (ex: 14:00 - 16:00):</label>
+      <input type="text" id="editarHorario" required>
+
+      <label>Motivo:</label>
+      <input type="text" id="editarMotivo">
+
+      <label>Professor(a):</label>
+      <input type="text" id="editarProf" required>
+
+      <div class="botoes-excluir" style="margin-top: 20px;">
+        <button type="button" id="cancelarEditar">Cancelar</button>
+        <button type="submit" id="salvarEditar">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- MODAL EXCLUIR -->
+<div id="modalExcluir" class="modal">
+  <div class="modal-content">
+    <span class="fechar fechar-excluir">&times;</span>
+    <h3>Deseja realmente excluir?</h3>
+
+    <p id="textoExcluir"></p>
+
+    <div class="botoes-excluir">
+      <button id="cancelarExcluir">Cancelar</button>
+      <button id="confirmarExcluir" class="confirmar-btn">Excluir</button>
+    </div>
+  </div>
+</div>
+
+
+
+  </main>
+
+ <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Quer saber mais sobre a Escola?</h3>
+        <p><a href="#">Clique aqui</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Suporte</h3>
+        <p>(99) 1234-5678</p>
+        <p><a href="#">Atendimento via Chat</a></p>
+      </div>
+
+     <div class="footer-col">
+        <h3>Contato</h3>
+        <div class="social-icons">
+          <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook.png" alt="Facebook"></a>
+          <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" alt="Instagram"></a>
+          <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/whatsapp.png" alt="WhatsApp"></a>
+          <a href="#"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/twitter.png" alt="twitter"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Escola Modelo — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="JS/SalasOcupados.js"></script>
+</body>
+</html>
