@@ -1,0 +1,326 @@
+/* ===========================
+   RESET & BASE
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  transition: background-color .3s, color .3s, border-color .3s;
+}
+
+html, body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background: linear-gradient(to bottom, #004b4f, #002224);
+  color: #e5f8fa;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+header {
+  background: rgba(0, 140, 155, 0.92);
+  padding: 14px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  width: 55px;
+  filter: drop-shadow(0 0 6px rgba(0,0,0,.4));
+}
+
+.logo h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+nav button,
+.dropbtn {
+  background: #01373d;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 10px;
+  color: #ecffff;
+  cursor: pointer;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0,0,0,.3);
+}
+
+nav button:hover,
+.dropbtn:hover {
+  background: #00bfd1;
+}
+
+/* ===========================
+   DROPDOWN
+=========================== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background: rgba(0, 70, 80, 0.97);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.5);
+  overflow: hidden;
+  min-width: 170px;
+  backdrop-filter: blur(6px);
+}
+
+.dropdown-content.show {
+  display: block;
+  animation: fadeIn .2s ease-out;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background: rgba(0, 165, 185, 0.7);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===========================
+   CONTAINER & CARD
+=========================== */
+.container {
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 10px;
+}
+
+.card {
+  background: #095155;
+  color: #ffffff;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,.25);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border: 1px solid #e0e0e0;
+  animation: cardFade .3s ease-out;
+  width: 450px;
+}
+
+@keyframes cardFade {
+  from { opacity: .5; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Labels */
+label {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* Inputs */
+select, input, textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1.6px solid #b5c7c9;
+  background: #f8ffff;
+  font-size: 15px;
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+  border-color: #009eaf;
+  box-shadow: 0 0 6px rgba(0, 180, 200, .5);
+  outline: none;
+}
+
+/* Button principal */
+button#btnReservar {
+  padding: 14px;
+  background: #00959e;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,.25);
+}
+
+button#btnReservar:hover {
+  background: #00b6c3;
+  transform: scale(1.02);
+}
+
+/* Mensagens */
+.msg {
+  text-align: center;
+  margin-top: 12px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+footer {
+  background: linear-gradient(to top, #00282b, #003b41);
+  color: #d8f7ff;
+  padding: 30px 150px 10px;
+  border-top: 1px solid #005c64;
+  margin-top: auto;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: left;
+}
+
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #b5eaff;
+  border-bottom: 1px solid #00a3b0;
+  padding-bottom: 6px;
+}
+
+.footer-col a,
+.footer-col p {
+  color: #d8f7ff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-col a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 26px;
+  filter: brightness(1);
+  transition: transform 0.3s, filter 0.3s;
+  cursor: pointer;
+}
+
+.social-icons img:hover {
+  transform: scale(1.15);
+  filter: brightness(1);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 13px;
+  color: #a7d8e6;
+  border-top: 1px solid #004c55;
+  padding-top: 10px;
+}
+
+
+/* ===========================
+   MODO CLARO
+=========================== */
+body.modo-claro {
+  background: linear-gradient(to bottom, #d7f4ff, #46d4e8);
+  color: #002c2f;
+}
+
+body.modo-claro header {
+  background: #00cfe0;
+}
+
+body.modo-claro .card {
+  background: #ffffff;
+  border-color: #aadfe7;
+  color: #002224;
+}
+
+/* Footer */
+body.modo-claro footer {
+  background: linear-gradient(to bottom, #eafcff, #00e5ff);
+  color: #003135;
+  border-top: 1px solid #97d9e2;
+}
+
+/* Social icons */
+body.modo-claro .social-icons img {
+  filter: brightness(0.1);
+}
+
+body.modo-claro a {
+  color: #004d53;
+}
+
+body.modo-claro a:hover {
+  color: #0044ff;
+}
+body.modo-claro .footer-col h3 {
+  color: #000000;
+  border-bottom: 1px solid #00ddff;
+}
+
+body.modo-claro p{
+  color: #004b50;
+}
+
+/* ===========================
+   RESPONSIVO
+=========================== */
+@media (max-width: 600px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo h1 {
+    display: none;
+  }
+
+  .container {
+    margin-top: 20px;
+  }
+}
