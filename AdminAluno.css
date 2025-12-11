@@ -1,0 +1,288 @@
+/* ================================
+   ESTILO BASE
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #006877, #002a2f);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================================
+   CABEÇALHO
+================================ */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #004c59;
+  padding: 15px 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  width: 60px;
+}
+
+.logo h1 {
+  font-size: 18px;
+  color: #d8faff;
+}
+
+/* Navegação */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+nav button {
+  background: #007d8b;
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav button:hover {
+  background: #00bcd4;
+  transform: translateY(-2px);
+}
+
+/* Botão tema */
+#themeToggle {
+  padding: 8px 10px;
+  font-size: 18px;
+}
+
+/* ===============================
+   DROPDOWN (menu do usuário)
+==================================*/
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  background-color: #007d8b;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.dropbtn:hover {
+  background-color: #009eb0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background-color: #007d8b;
+  border-radius: 6px;
+  min-width: 180px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  z-index: 10;
+}
+
+.dropdown-content a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #006672;
+}
+
+.show {
+  display: block;
+}
+
+/* ================================
+   FORMULÁRIO
+================================ */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px 35px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #aee6f7;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+input,
+select,
+textarea {
+  padding: 12px;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  color: #222;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #00bcd4;
+  background: #e6f9fc;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  background: #00bcd4;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+  background: #009cb0;
+  transform: translateY(-2px);
+}
+
+/* ================================
+   RODAPÉ
+================================ */
+footer {
+  background: linear-gradient(to top, #00282b, #003b41);
+  color: #d8f7ff;
+  padding: 30px 150px 10px;
+  border-top: 1px solid #005c64;
+  margin-top: auto;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.footer-col h3 {
+  font-size: 17px;
+  margin-bottom: 10px;
+  color: #b5eaff;
+  border-bottom: 1px solid #00a3b0;
+  padding-bottom: 6px;
+}
+
+.footer-col a,
+.footer-col p {
+  font-size: 14px;
+  text-decoration: none;
+  color: #d8f7ff;
+  transition: 0.3s;
+}
+
+.footer-col a:hover {
+  color: #fff;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.social-icons img {
+  width: 26px;
+  filter: brightness(1);
+  transition: 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.15);
+}
+
+/* Final do rodapé */
+.footer-bottom {
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 10px;
+  border-top: 1px solid #004c55;
+  font-size: 13px;
+  color: #a7d8e6;
+}
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+@media (max-width: 600px) {
+
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .form-container {
+    padding: 25px 20px;
+  }
+
+  footer {
+    padding: 25px 30px 10px;
+  }
+}
