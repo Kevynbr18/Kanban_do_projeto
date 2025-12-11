@@ -19,7 +19,7 @@ html, body {
    MODO ESCURO PADRÃO
 =========================== */
 body {
-  background: linear-gradient(to bottom, #00474d, #00282a);
+      background: linear-gradient(180deg, #023e58, #00252b);
   color: #e5f8fa;
   display: flex;
   flex-direction: column;
@@ -656,3 +656,4 @@ body.modo-claro p{
     width: 90%;
   }
 }
+
