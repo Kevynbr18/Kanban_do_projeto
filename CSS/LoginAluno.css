@@ -7,7 +7,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(180deg, #00363d, #001e22);
+  background: linear-gradient(180deg, #023e58, #00252b);
   color: #eafcff;
   min-height: 100vh;
   display: flex;
@@ -112,7 +112,7 @@ body.modo-claro p{
 
 /* === CABEÇALHO === */
 header {
-  background: rgba(0, 127, 143, 0.9);
+  background: rgba(0, 140, 155, 0.92);
   backdrop-filter: blur(8px);
   display: flex;
   justify-content: space-between;

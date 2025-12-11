@@ -16,7 +16,7 @@ html, body {
 }
 
 body {
-  background: linear-gradient(to bottom, #004b4f, #002224);
+      background: linear-gradient(180deg, #023e58, #00252b);
   color: #e5f8fa;
 }
 
@@ -58,7 +58,7 @@ nav {
 
 nav button,
 .dropbtn {
-  background: #01373d;
+  background: rgba(0, 90, 120, 0.8);
   border: none;
   padding: 8px 15px;
   border-radius: 10px;

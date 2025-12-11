@@ -7,7 +7,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(180deg, #00363d, #001e22);
+      background: linear-gradient(180deg, #023e58, #00252b);
   color: #eafcff;
   min-height: 100vh;
   display: flex;
@@ -149,8 +149,6 @@ nav button:hover,
   background: #00b8d4;
   transform: scale(1.05);
 }
-
-
 
 /* ===== DROPDOWN ===== */
 .dropdown {

@@ -20,6 +20,14 @@ header {
   border-bottom: 2px solid #00a6b8;
   flex-wrap: wrap;
 }
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
 
 .logo { display: flex; align-items: center; gap: 10px; }
 .logo img { height: 60px; filter: brightness(130%) saturate(150%); }
@@ -76,26 +84,17 @@ nav button:hover { background: #00bcd4; transform: translateY(-2px); }
 
 /* CALENDÁRIO */
 /* Container geral */
-main {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 40px;
-  flex-wrap: wrap;
-}
-
-/* Bloco do calendário */
 .calendar-container {
   background: rgba(255, 255, 255, 0.03);
   border-radius: 20px;
-  padding: 25px;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  padding: 15px; /* Menor padding */
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  width: 950px;
-  max-width: 95vw;
+  width: 800px; /* Menor largura */
+  max-width: 90vw; /* Ajusta a largura para 90% da tela */
 }
 
+/* Cabeçalho do calendário */
 .calendar-header {
   display: flex;
   justify-content: space-between;
@@ -106,7 +105,7 @@ main {
   background: none;
   border: none;
   color: #36e0dc;
-  font-size: 1.4rem;
+  font-size: 1.2rem; /* Menor tamanho */
   cursor: pointer;
   transition: 0.2s;
 }
@@ -117,9 +116,11 @@ main {
 #month-year { 
   color: #b6f7f5; 
   text-align: center; 
-  font-weight: 600; 
+  font-weight: 600;
+  font-size: 1.2rem; /* Fonte menor */
 }
 
+/* Grade dos dias */
 .weekdays, .days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -132,11 +133,11 @@ main {
   color: #36e0dc; 
 }
 
-/* Grade dos dias */
+/* Grade dos dias (ajuste no gap e na largura das células) */
 .days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 14px;
+  gap: 10px; /* Menor espaçamento */
   margin-top: 15px;
 }
 
@@ -145,15 +146,15 @@ main {
   position: relative;
   background: rgba(255, 255, 255, 0.04);
   border-radius: 12px;
-  padding: 12px;
-  min-height: 120px;
+  padding: 8px; /* Menor padding */
+  min-height: 100px; /* Menor altura */
   width: 100%;
   transition: 0.3s;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  font-size: 1rem;
+  font-size: 0.9rem; /* Fonte menor */
   overflow: hidden;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
@@ -176,9 +177,9 @@ main {
   content: attr(data-day);
   font-weight: 600;
   color: #b6f7f5;
-  margin-bottom: 6px;
+  margin-bottom: 4px; /* Menos espaçamento */
   display: block;
-  font-size: 1.05rem;
+  font-size: 1rem; /* Fonte menor */
 }
 
 /* Responsividade */
@@ -188,9 +189,21 @@ main {
   }
 
   .days {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr); /* Menos colunas em telas menores */
   }
 }
+
+@media (max-width: 768px) {
+  .calendar-container {
+    width: 100%;
+    padding: 10px; /* Menos padding */
+  }
+
+  .days {
+    grid-template-columns: repeat(4, 1fr); /* Ajuste para 4 colunas em telas muito pequenas */
+  }
+}
+
 
 /* EVENTOS */
 .event-dots { 
